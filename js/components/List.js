@@ -1,8 +1,7 @@
 import React from 'react';
-import BaseComponent from './BaseComponent';
 import Item from './Item';
 
-class List extends BaseComponent {
+class List extends React.Component {
 
   render () {
     

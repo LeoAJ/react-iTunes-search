@@ -56,7 +56,7 @@
 
 	var _componentsApp2 = _interopRequireDefault(_componentsApp);
 
-	__webpack_require__(253);
+	__webpack_require__(252);
 
 	_react2['default'].render(_react2['default'].createElement(_componentsApp2['default'], null), document.querySelector('#itunes-search'));
 
@@ -20459,11 +20459,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _BaseComponent2 = __webpack_require__(158);
-
-	var _BaseComponent3 = _interopRequireDefault(_BaseComponent2);
-
-	var _Header = __webpack_require__(159);
+	var _Header = __webpack_require__(158);
 
 	var _Header2 = _interopRequireDefault(_Header);
 
@@ -20471,14 +20467,14 @@
 
 	var _Container2 = _interopRequireDefault(_Container);
 
-	var App = (function (_BaseComponent) {
+	var App = (function (_React$Component) {
 	  function App() {
 	    _classCallCheck(this, App);
 
 	    _get(Object.getPrototypeOf(App.prototype), 'constructor', this).apply(this, arguments);
 	  }
 
-	  _inherits(App, _BaseComponent);
+	  _inherits(App, _React$Component);
 
 	  _createClass(App, [{
 	    key: 'render',
@@ -20493,7 +20489,7 @@
 	  }]);
 
 	  return App;
-	})(_BaseComponent3['default']);
+	})(_react2['default'].Component);
 
 	exports['default'] = App;
 	module.exports = exports['default'];
@@ -20522,88 +20518,58 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var BaseComponent = (function (_React$Component) {
-	  function BaseComponent() {
-	    _classCallCheck(this, BaseComponent);
+	var _classnames = __webpack_require__(159);
 
-	    _get(Object.getPrototypeOf(BaseComponent.prototype), 'constructor', this).apply(this, arguments);
-	  }
-
-	  _inherits(BaseComponent, _React$Component);
-
-	  _createClass(BaseComponent, [{
-	    key: '_bind',
-	    value: function _bind() {
-	      var _this = this;
-
-	      for (var _len = arguments.length, methods = Array(_len), _key = 0; _key < _len; _key++) {
-	        methods[_key] = arguments[_key];
-	      }
-
-	      methods.forEach(function (method) {
-	        return _this[method] = _this[method].bind(_this);
-	      });
-	    }
-	  }]);
-
-	  return BaseComponent;
-	})(_react2['default'].Component);
-
-	exports['default'] = BaseComponent;
-	module.exports = exports['default'];
-
-/***/ },
-/* 159 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, '__esModule', {
-	  value: true
-	});
-
-	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
-
-	var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; desc = parent = getter = undefined; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) subClass.__proto__ = superClass; }
-
-	var _react = __webpack_require__(1);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	var _BaseComponent2 = __webpack_require__(158);
-
-	var _BaseComponent3 = _interopRequireDefault(_BaseComponent2);
+	var _classnames2 = _interopRequireDefault(_classnames);
 
 	var _emitter = __webpack_require__(160);
 
 	var _emitter2 = _interopRequireDefault(_emitter);
 
-	var Header = (function (_BaseComponent) {
-	  function Header() {
+	var Header = (function (_React$Component) {
+	  function Header(props) {
 	    _classCallCheck(this, Header);
 
-	    _get(Object.getPrototypeOf(Header.prototype), 'constructor', this).apply(this, arguments);
+	    _get(Object.getPrototypeOf(Header.prototype), 'constructor', this).call(this, props);
+	    this.state = {
+	      showLoading: false
+	    };
+	    this._search = this._search.bind(this);
 	  }
 
-	  _inherits(Header, _BaseComponent);
+	  _inherits(Header, _React$Component);
 
 	  _createClass(Header, [{
-	    key: 'search',
-	    value: function search(e) {
+	    key: 'componentDidMount',
+	    value: function componentDidMount() {
+	      var _this = this;
+
+	      _emitter2['default'].on('resetLoader', function () {
+	        _this.setState({
+	          showLoading: false
+	        });
+	      });
+	    }
+	  }, {
+	    key: 'componentWillUnmount',
+	    value: function componentWillUnmount() {
+	      _emitter2['default'].removeListener('resetLoader');
+	    }
+	  }, {
+	    key: '_search',
+	    value: function _search(e) {
 	      // only trigger search while user type enter
 	      if (e.keyCode === 13) {
+	        this.setState({
+	          showLoading: true
+	        });
 	        _emitter2['default'].emit('search', e.target.value);
 	      }
 	    }
 	  }, {
 	    key: 'render',
 	    value: function render() {
+
 	      return _react2['default'].createElement(
 	        'div',
 	        { className: 'ui inverted segment center aligned' },
@@ -20612,8 +20578,13 @@
 	          { className: 'ui header' },
 	          _react2['default'].createElement(
 	            'div',
-	            { className: 'ui icon input' },
-	            _react2['default'].createElement('input', { type: 'text', onKeyDown: this.search, placeholder: 'Search...' }),
+	            { className: (0, _classnames2['default'])({
+	                'ui': true,
+	                'icon': true,
+	                'input': true,
+	                'loading': this.state.showLoading
+	              }) },
+	            _react2['default'].createElement('input', { type: 'text', onKeyDown: this._search, placeholder: 'Search...' }),
 	            _react2['default'].createElement('i', { className: 'search icon' })
 	          )
 	        )
@@ -20622,10 +20593,65 @@
 	  }]);
 
 	  return Header;
-	})(_BaseComponent3['default']);
+	})(_react2['default'].Component);
 
 	exports['default'] = Header;
 	module.exports = exports['default'];
+
+/***/ },
+/* 159 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __WEBPACK_AMD_DEFINE_RESULT__;/*!
+	  Copyright (c) 2015 Jed Watson.
+	  Licensed under the MIT License (MIT), see
+	  http://jedwatson.github.io/classnames
+	*/
+
+	(function () {
+		'use strict';
+
+		function classNames () {
+
+			var classes = '';
+
+			for (var i = 0; i < arguments.length; i++) {
+				var arg = arguments[i];
+				if (!arg) continue;
+
+				var argType = typeof arg;
+
+				if ('string' === argType || 'number' === argType) {
+					classes += ' ' + arg;
+
+				} else if (Array.isArray(arg)) {
+					classes += ' ' + classNames.apply(null, arg);
+
+				} else if ('object' === argType) {
+					for (var key in arg) {
+						if (arg.hasOwnProperty(key) && arg[key]) {
+							classes += ' ' + key;
+						}
+					}
+				}
+			}
+
+			return classes.substr(1);
+		}
+
+		if (true) {
+			// AMD. Register as an anonymous module.
+			!(__WEBPACK_AMD_DEFINE_RESULT__ = function () {
+				return classNames;
+			}.call(exports, __webpack_require__, exports, module), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+		} else if (typeof module !== 'undefined' && module.exports) {
+			module.exports = classNames;
+		} else {
+			window.classNames = classNames;
+		}
+
+	}());
+
 
 /***/ },
 /* 160 */
@@ -20977,10 +21003,6 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _BaseComponent2 = __webpack_require__(158);
-
-	var _BaseComponent3 = _interopRequireDefault(_BaseComponent2);
-
 	var _List = __webpack_require__(163);
 
 	var _List2 = _interopRequireDefault(_List);
@@ -20989,22 +21011,22 @@
 
 	var _emitter2 = _interopRequireDefault(_emitter);
 
-	var _classnames = __webpack_require__(251);
+	var _classnames = __webpack_require__(159);
 
 	var _classnames2 = _interopRequireDefault(_classnames);
 
-	var _reqwest = __webpack_require__(252);
+	var _reqwest = __webpack_require__(251);
 
 	var _reqwest2 = _interopRequireDefault(_reqwest);
 
-	var Container = (function (_BaseComponent) {
+	var Container = (function (_React$Component) {
 	  function Container() {
 	    _classCallCheck(this, Container);
 
 	    _get(Object.getPrototypeOf(Container.prototype), 'constructor', this).apply(this, arguments);
 	  }
 
-	  _inherits(Container, _BaseComponent);
+	  _inherits(Container, _React$Component);
 
 	  _createClass(Container, [{
 	    key: 'componentDidMount',
@@ -21021,8 +21043,15 @@
 	          });
 	        }).fail(function (err) {
 	          console.log(err);
-	        }).always(function () {});
+	        }).always(function () {
+	          _emitter2['default'].emit('resetLoader');
+	        });
 	      });
+	    }
+	  }, {
+	    key: 'componentWillUnmount',
+	    value: function componentWillUnmount() {
+	      _emitter2['default'].removeListener('search');
 	    }
 	  }, {
 	    key: 'render',
@@ -21044,7 +21073,7 @@
 	  }]);
 
 	  return Container;
-	})(_BaseComponent3['default']);
+	})(_react2['default'].Component);
 
 	exports['default'] = Container;
 	module.exports = exports['default'];
@@ -21073,22 +21102,18 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _BaseComponent2 = __webpack_require__(158);
-
-	var _BaseComponent3 = _interopRequireDefault(_BaseComponent2);
-
 	var _Item = __webpack_require__(164);
 
 	var _Item2 = _interopRequireDefault(_Item);
 
-	var List = (function (_BaseComponent) {
+	var List = (function (_React$Component) {
 	  function List() {
 	    _classCallCheck(this, List);
 
 	    _get(Object.getPrototypeOf(List.prototype), 'constructor', this).apply(this, arguments);
 	  }
 
-	  _inherits(List, _BaseComponent);
+	  _inherits(List, _React$Component);
 
 	  _createClass(List, [{
 	    key: 'render',
@@ -21108,7 +21133,7 @@
 	  }]);
 
 	  return List;
-	})(_BaseComponent3['default']);
+	})(_react2['default'].Component);
 
 	exports['default'] = List;
 	module.exports = exports['default'];
@@ -21137,22 +21162,18 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _BaseComponent2 = __webpack_require__(158);
-
-	var _BaseComponent3 = _interopRequireDefault(_BaseComponent2);
-
 	var _moment = __webpack_require__(165);
 
 	var _moment2 = _interopRequireDefault(_moment);
 
-	var Item = (function (_BaseComponent) {
+	var Item = (function (_React$Component) {
 	  function Item() {
 	    _classCallCheck(this, Item);
 
 	    _get(Object.getPrototypeOf(Item.prototype), 'constructor', this).apply(this, arguments);
 	  }
 
-	  _inherits(Item, _BaseComponent);
+	  _inherits(Item, _React$Component);
 
 	  _createClass(Item, [{
 	    key: 'render',
@@ -21215,7 +21236,11 @@
 	  }]);
 
 	  return Item;
-	})(_BaseComponent3['default']);
+	})(_react2['default'].Component);
+
+	Item.propTypes = {
+	  data: _react2['default'].PropTypes.object.isRequired
+	};
 
 	exports['default'] = Item;
 	module.exports = exports['default'];
@@ -32411,61 +32436,6 @@
 /* 251 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var __WEBPACK_AMD_DEFINE_RESULT__;/*!
-	  Copyright (c) 2015 Jed Watson.
-	  Licensed under the MIT License (MIT), see
-	  http://jedwatson.github.io/classnames
-	*/
-
-	(function () {
-		'use strict';
-
-		function classNames () {
-
-			var classes = '';
-
-			for (var i = 0; i < arguments.length; i++) {
-				var arg = arguments[i];
-				if (!arg) continue;
-
-				var argType = typeof arg;
-
-				if ('string' === argType || 'number' === argType) {
-					classes += ' ' + arg;
-
-				} else if (Array.isArray(arg)) {
-					classes += ' ' + classNames.apply(null, arg);
-
-				} else if ('object' === argType) {
-					for (var key in arg) {
-						if (arg.hasOwnProperty(key) && arg[key]) {
-							classes += ' ' + key;
-						}
-					}
-				}
-			}
-
-			return classes.substr(1);
-		}
-
-		if (true) {
-			// AMD. Register as an anonymous module.
-			!(__WEBPACK_AMD_DEFINE_RESULT__ = function () {
-				return classNames;
-			}.call(exports, __webpack_require__, exports, module), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-		} else if (typeof module !== 'undefined' && module.exports) {
-			module.exports = classNames;
-		} else {
-			window.classNames = classNames;
-		}
-
-	}());
-
-
-/***/ },
-/* 252 */
-/***/ function(module, exports, __webpack_require__) {
-
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
 	  * Reqwest! A general purpose XHR connection manager
 	  * license MIT (c) Dustin Diaz 2014
@@ -33084,16 +33054,16 @@
 
 
 /***/ },
-/* 253 */
+/* 252 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(254);
+	var content = __webpack_require__(253);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(256)(content, {});
+	var update = __webpack_require__(255)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -33110,10 +33080,10 @@
 	}
 
 /***/ },
-/* 254 */
+/* 253 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(255)();
+	exports = module.exports = __webpack_require__(254)();
 	// imports
 
 
@@ -33124,7 +33094,7 @@
 
 
 /***/ },
-/* 255 */
+/* 254 */
 /***/ function(module, exports) {
 
 	/*
@@ -33180,7 +33150,7 @@
 
 
 /***/ },
-/* 256 */
+/* 255 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*

@@ -1,11 +1,10 @@
 import React from 'react';
-import BaseComponent from './BaseComponent';
 import List from './List';
 import emitter from '../emitter';
 import classNames from 'classnames';
 import reqwest from 'reqwest';
 
-class Container extends BaseComponent {
+class Container extends React.Component {
 
   componentDidMount () {
     emitter.on('search', (query) => {
@@ -22,10 +21,14 @@ class Container extends BaseComponent {
         console.log(err);
       })
       .always(() => {
-
+        emitter.emit('resetLoader');
       });
     });
 
+  }
+
+  componentWillUnmount () {
+    emitter.removeListener('search');
   }
 
   render () {

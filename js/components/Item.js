@@ -1,8 +1,7 @@
 import React from 'react';
-import BaseComponent from './BaseComponent';
 import moment from 'moment';
 
-class Item extends BaseComponent {
+class Item extends React.Component {
 
   render () {
 
@@ -40,5 +39,9 @@ class Item extends BaseComponent {
   }
 
 }
+
+Item.propTypes = {
+  data: React.PropTypes.object.isRequired
+};
 
 export default Item;

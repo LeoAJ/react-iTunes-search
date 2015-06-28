@@ -1,9 +1,8 @@
 import React from 'react';
-import BaseComponent from './BaseComponent';
 import Header from './Header';
 import Container from './Container';
 
-class App extends BaseComponent {
+class App extends React.Component {
 
   render () {
     return (

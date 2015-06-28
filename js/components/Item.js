@@ -5,10 +5,8 @@ class Item extends React.Component {
 
   render () {
 
-    var data = this.props.data,
+    let data = this.props.data,
         date = moment(data.releaseDate).format('MMM DD, YYYY');
-
-    console.log(data);
 
     return (
       <div className="card">

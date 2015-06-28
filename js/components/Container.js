@@ -6,6 +6,13 @@ import reqwest from 'reqwest';
 
 class Container extends React.Component {
 
+  constructor(props) {
+    super(props);
+    this.state = {
+      res: null
+    };
+  }
+
   componentDidMount () {
     emitter.on('search', (query) => {
       reqwest({
@@ -33,8 +40,6 @@ class Container extends React.Component {
 
   render () {
     
-    var res = this.state && this.state.res;
-    
     return (
       <div className="container">
         <div className={
@@ -44,7 +49,7 @@ class Container extends React.Component {
             'active': false
           })
         }></div>
-        <List res={res} />
+        <List res={this.state.res} />
       </div>
     );
   }

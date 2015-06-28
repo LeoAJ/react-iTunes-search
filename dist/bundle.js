@@ -21020,10 +21020,13 @@
 	var _reqwest2 = _interopRequireDefault(_reqwest);
 
 	var Container = (function (_React$Component) {
-	  function Container() {
+	  function Container(props) {
 	    _classCallCheck(this, Container);
 
-	    _get(Object.getPrototypeOf(Container.prototype), 'constructor', this).apply(this, arguments);
+	    _get(Object.getPrototypeOf(Container.prototype), 'constructor', this).call(this, props);
+	    this.state = {
+	      res: null
+	    };
 	  }
 
 	  _inherits(Container, _React$Component);
@@ -21057,8 +21060,6 @@
 	    key: 'render',
 	    value: function render() {
 
-	      var res = this.state && this.state.res;
-
 	      return _react2['default'].createElement(
 	        'div',
 	        { className: 'container' },
@@ -21067,7 +21068,7 @@
 	            'loader': true,
 	            'active': false
 	          }) }),
-	        _react2['default'].createElement(_List2['default'], { res: res })
+	        _react2['default'].createElement(_List2['default'], { res: this.state.res })
 	      );
 	    }
 	  }]);
@@ -21181,8 +21182,6 @@
 
 	      var data = this.props.data,
 	          date = (0, _moment2['default'])(data.releaseDate).format('MMM DD, YYYY');
-
-	      console.log(data);
 
 	      return _react2['default'].createElement(
 	        'div',

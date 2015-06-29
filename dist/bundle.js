@@ -56,7 +56,17 @@
 
 	var _componentsApp2 = _interopRequireDefault(_componentsApp);
 
-	__webpack_require__(252);
+	__webpack_require__(253);
+
+	var _cssImgRibbonPng = __webpack_require__(257);
+
+	var _cssImgRibbonPng2 = _interopRequireDefault(_cssImgRibbonPng);
+
+	// add github ribbon
+	var img = document.createElement('img');
+	img.src = 'dist/' + _cssImgRibbonPng2['default'];
+	img.classList.add('ribbon');
+	document.querySelector('#github-ribbon').appendChild(img);
 
 	_react2['default'].render(_react2['default'].createElement(_componentsApp2['default'], null), document.querySelector('#itunes-search'));
 
@@ -21007,6 +21017,10 @@
 
 	var _List2 = _interopRequireDefault(_List);
 
+	var _Message = __webpack_require__(251);
+
+	var _Message2 = _interopRequireDefault(_Message);
+
 	var _emitter = __webpack_require__(160);
 
 	var _emitter2 = _interopRequireDefault(_emitter);
@@ -21015,9 +21029,20 @@
 
 	var _classnames2 = _interopRequireDefault(_classnames);
 
-	var _reqwest = __webpack_require__(251);
+	var _reqwest = __webpack_require__(252);
 
 	var _reqwest2 = _interopRequireDefault(_reqwest);
+
+	var msg = {
+	  start: {
+	    headerMsg: 'Welcome back!',
+	    iconColor: 'black',
+	    icon: 'help',
+	    bodyMsg: 'Please use enter to start search!'
+	  },
+	  loading: {},
+	  error: {}
+	};
 
 	var Container = (function (_React$Component) {
 	  function Container(props) {
@@ -21025,7 +21050,8 @@
 
 	    _get(Object.getPrototypeOf(Container.prototype), 'constructor', this).call(this, props);
 	    this.state = {
-	      res: null
+	      res: null,
+	      msgInfo: msg.start
 	    };
 	  }
 
@@ -21037,15 +21063,20 @@
 	      var _this = this;
 
 	      _emitter2['default'].on('search', function (query) {
+	        _this.setState({});
 	        (0, _reqwest2['default'])({
 	          url: 'https://itunes.apple.com/search?term=' + query.split(' ').join('+'),
 	          type: 'jsonp'
 	        }).then(function (res) {
 	          _this.setState({
-	            res: res
+	            res: res,
+	            msgInfo: res.resultCount ? false : true
 	          });
 	        }).fail(function (err) {
-	          console.log(err);
+	          _this.setState({
+	            res: null,
+	            msgInfo: false
+	          });
 	        }).always(function () {
 	          _emitter2['default'].emit('resetLoader');
 	        });
@@ -21060,6 +21091,8 @@
 	    key: 'render',
 	    value: function render() {
 
+	      // let msg = this.state.msgInfo ? (<Message />) : null;
+
 	      return _react2['default'].createElement(
 	        'div',
 	        { className: 'container' },
@@ -21068,6 +21101,7 @@
 	            'loader': true,
 	            'active': false
 	          }) }),
+	        _react2['default'].createElement(_Message2['default'], { msgInfo: this.state.msgInfo }),
 	        _react2['default'].createElement(_List2['default'], { res: this.state.res })
 	      );
 	    }
@@ -21189,7 +21223,7 @@
 	        _react2['default'].createElement(
 	          'a',
 	          { className: 'image', href: data.trackViewUrl, target: '_blank' },
-	          _react2['default'].createElement('img', { src: data.artworkUrl100.replace('100x100', '1200x1200') })
+	          _react2['default'].createElement('img', { className: 'ui medium rounded image', src: data.artworkUrl100.replace('100x100', '1200x1200') })
 	        ),
 	        _react2['default'].createElement(
 	          'div',
@@ -32435,6 +32469,83 @@
 /* 251 */
 /***/ function(module, exports, __webpack_require__) {
 
+	'use strict';
+
+	Object.defineProperty(exports, '__esModule', {
+	  value: true
+	});
+
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+	var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; desc = parent = getter = undefined; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) subClass.__proto__ = superClass; }
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _classnames = __webpack_require__(159);
+
+	var _classnames2 = _interopRequireDefault(_classnames);
+
+	var Message = (function (_React$Component) {
+	  function Message() {
+	    _classCallCheck(this, Message);
+
+	    _get(Object.getPrototypeOf(Message.prototype), 'constructor', this).apply(this, arguments);
+	  }
+
+	  _inherits(Message, _React$Component);
+
+	  _createClass(Message, [{
+	    key: '_close',
+	    value: function _close() {
+	      document.querySelector('.message').classList.add('hide');
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+
+	      var msgInfo = this.props.msgInfo,
+	          iconColor = msgInfo.iconColor;
+	      console.log(iconColor);
+	      return _react2['default'].createElement(
+	        'div',
+	        { className: (0, _classnames2['default'])('ui', 'icon', 'message', { iconColor: iconColor }) },
+	        _react2['default'].createElement('i', { className: 'icon {msgInfo.icon}' }),
+	        _react2['default'].createElement(
+	          'div',
+	          { className: 'content' },
+	          _react2['default'].createElement(
+	            'div',
+	            { className: 'header' },
+	            msgInfo.headerMsg
+	          ),
+	          _react2['default'].createElement(
+	            'p',
+	            null,
+	            msgInfo.bodyMsg
+	          )
+	        )
+	      );
+	    }
+	  }]);
+
+	  return Message;
+	})(_react2['default'].Component);
+
+	exports['default'] = Message;
+	module.exports = exports['default'];
+
+/***/ },
+/* 252 */
+/***/ function(module, exports, __webpack_require__) {
+
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
 	  * Reqwest! A general purpose XHR connection manager
 	  * license MIT (c) Dustin Diaz 2014
@@ -33053,16 +33164,16 @@
 
 
 /***/ },
-/* 252 */
+/* 253 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(253);
+	var content = __webpack_require__(254);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(255)(content, {});
+	var update = __webpack_require__(256)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -33079,21 +33190,21 @@
 	}
 
 /***/ },
-/* 253 */
+/* 254 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(254)();
+	exports = module.exports = __webpack_require__(255)();
 	// imports
 
 
 	// module
-	exports.push([module.id, ".container {\n  margin: 50px auto;\n  max-width: 900px;\n}", ""]);
+	exports.push([module.id, ".container {\n  margin: 50px auto;\n  max-width: 900px;\n}\n\n.ribbon {\n  position: absolute;\n  top: 0;\n  right: 0;\n  border: 0;\n  z-index: 100;\n}", ""]);
 
 	// exports
 
 
 /***/ },
-/* 254 */
+/* 255 */
 /***/ function(module, exports) {
 
 	/*
@@ -33149,7 +33260,7 @@
 
 
 /***/ },
-/* 255 */
+/* 256 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
@@ -33372,6 +33483,12 @@
 			URL.revokeObjectURL(oldSrc);
 	}
 
+
+/***/ },
+/* 257 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__.p + "5330c88f5cea3a396d4ba8fc90ac6c31.png"
 
 /***/ }
 /******/ ]);

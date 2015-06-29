@@ -11,7 +11,7 @@ class Item extends React.Component {
     return (
       <div className="card">
         <a className="image" href={data.trackViewUrl} target="_blank">
-          <img src={data.artworkUrl100.replace('100x100', '1200x1200')} />
+          <img className="ui medium rounded image" src={data.artworkUrl100.replace('100x100', '1200x1200')} />
         </a>
         <div className="content">
           <div className="header">{data.trackName}</div>

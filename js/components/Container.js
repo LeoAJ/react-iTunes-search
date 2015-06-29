@@ -1,31 +1,67 @@
 import React from 'react';
 import List from './List';
+import Message from './Message';
 import emitter from '../emitter';
-import classNames from 'classnames';
 import reqwest from 'reqwest';
+
+let msg = {
+  start: {
+    headerMsg: 'Welcome back!',
+    iconColor: 'black',
+    icon: 'help',
+    bodyMsg: 'Please use enter to start search!'
+  },
+  loading: {
+    headerMsg: 'Just one second',
+    iconColor: 'blue',
+    icon: 'notched circle loading',
+    bodyMsg: 'Fetching data......'
+  },
+  noContent: {
+    headerMsg: 'No search results',
+    iconColor: 'yellow',
+    icon: 'warning',
+    bodyMsg: 'There is no data.'
+  },
+  error: {
+    headerMsg: 'Error',
+    iconColor: 'red',
+    icon: 'warning sign',
+    bodyMsg: 'We\'re sorry please try again later.'
+  }
+};
 
 class Container extends React.Component {
 
   constructor(props) {
     super(props);
     this.state = {
-      res: null
+      res: null,
+      msgInfo: msg.start
     };
   }
 
   componentDidMount () {
     emitter.on('search', (query) => {
+      this.setState({
+        res: null,
+        msgInfo: msg.loading
+      });
       reqwest({
         url: 'https://itunes.apple.com/search?term=' + query.split(' ').join('+'),
         type: 'jsonp'
       })
       .then((res) => {
         this.setState({
-          res: res
+          res: res,
+          msgInfo: res.resultCount ? false : msg.noContent
         });
       })
       .fail((err) => {
-        console.log(err);
+        this.setState({
+          res: null,
+          msgInfo: msg.error
+        });
       })
       .always(() => {
         emitter.emit('resetLoader');
@@ -39,16 +75,10 @@ class Container extends React.Component {
   }
 
   render () {
-    
+
     return (
       <div className="container">
-        <div className={
-          classNames({
-            'ui': true,
-            'loader': true,
-            'active': false
-          })
-        }></div>
+        <Message msgInfo={this.state.msgInfo} />
         <List res={this.state.res} />
       </div>
     );

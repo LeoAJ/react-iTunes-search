@@ -20588,10 +20588,7 @@
 	          { className: 'ui header' },
 	          _react2['default'].createElement(
 	            'div',
-	            { className: (0, _classnames2['default'])({
-	                'ui': true,
-	                'icon': true,
-	                'input': true,
+	            { className: (0, _classnames2['default'])('ui', 'icon', 'input', {
 	                'loading': this.state.showLoading
 	              }) },
 	            _react2['default'].createElement('input', { type: 'text', onKeyDown: this._search, placeholder: 'Search...' }),
@@ -21025,10 +21022,6 @@
 
 	var _emitter2 = _interopRequireDefault(_emitter);
 
-	var _classnames = __webpack_require__(159);
-
-	var _classnames2 = _interopRequireDefault(_classnames);
-
 	var _reqwest = __webpack_require__(252);
 
 	var _reqwest2 = _interopRequireDefault(_reqwest);
@@ -21040,8 +21033,24 @@
 	    icon: 'help',
 	    bodyMsg: 'Please use enter to start search!'
 	  },
-	  loading: {},
-	  error: {}
+	  loading: {
+	    headerMsg: 'Just one second',
+	    iconColor: 'blue',
+	    icon: 'notched circle loading',
+	    bodyMsg: 'Fetching data......'
+	  },
+	  noContent: {
+	    headerMsg: 'No search results',
+	    iconColor: 'yellow',
+	    icon: 'warning',
+	    bodyMsg: 'There is no data.'
+	  },
+	  error: {
+	    headerMsg: 'Error',
+	    iconColor: 'red',
+	    icon: 'warning sign',
+	    bodyMsg: 'We\'re sorry please try again later.'
+	  }
 	};
 
 	var Container = (function (_React$Component) {
@@ -21063,19 +21072,22 @@
 	      var _this = this;
 
 	      _emitter2['default'].on('search', function (query) {
-	        _this.setState({});
+	        _this.setState({
+	          res: null,
+	          msgInfo: msg.loading
+	        });
 	        (0, _reqwest2['default'])({
 	          url: 'https://itunes.apple.com/search?term=' + query.split(' ').join('+'),
 	          type: 'jsonp'
 	        }).then(function (res) {
 	          _this.setState({
 	            res: res,
-	            msgInfo: res.resultCount ? false : true
+	            msgInfo: res.resultCount ? false : msg.noContent
 	          });
 	        }).fail(function (err) {
 	          _this.setState({
 	            res: null,
-	            msgInfo: false
+	            msgInfo: msg.error
 	          });
 	        }).always(function () {
 	          _emitter2['default'].emit('resetLoader');
@@ -21091,16 +21103,9 @@
 	    key: 'render',
 	    value: function render() {
 
-	      // let msg = this.state.msgInfo ? (<Message />) : null;
-
 	      return _react2['default'].createElement(
 	        'div',
 	        { className: 'container' },
-	        _react2['default'].createElement('div', { className: (0, _classnames2['default'])({
-	            'ui': true,
-	            'loader': true,
-	            'active': false
-	          }) }),
 	        _react2['default'].createElement(_Message2['default'], { msgInfo: this.state.msgInfo }),
 	        _react2['default'].createElement(_List2['default'], { res: this.state.res })
 	      );
@@ -32503,21 +32508,17 @@
 	  _inherits(Message, _React$Component);
 
 	  _createClass(Message, [{
-	    key: '_close',
-	    value: function _close() {
-	      document.querySelector('.message').classList.add('hide');
-	    }
-	  }, {
 	    key: 'render',
 	    value: function render() {
 
-	      var msgInfo = this.props.msgInfo,
-	          iconColor = msgInfo.iconColor;
-	      console.log(iconColor);
+	      var msgInfo = this.props.msgInfo;
+
 	      return _react2['default'].createElement(
 	        'div',
-	        { className: (0, _classnames2['default'])('ui', 'icon', 'message', { iconColor: iconColor }) },
-	        _react2['default'].createElement('i', { className: 'icon {msgInfo.icon}' }),
+	        { className: (0, _classnames2['default'])('ui', 'icon', 'message', msgInfo.iconColor, {
+	            'hidden': !msgInfo
+	          }) },
+	        _react2['default'].createElement('i', { className: (0, _classnames2['default'])('icon', msgInfo.icon) }),
 	        _react2['default'].createElement(
 	          'div',
 	          { className: 'content' },

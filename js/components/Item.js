@@ -1,37 +1,42 @@
 import React from 'react';
 import moment from 'moment';
+import { capitalize } from '../utils';
 
 class Item extends React.Component {
 
   render () {
 
     let data = this.props.data,
-        date = moment(data.releaseDate).format('MMM DD, YYYY');
+        price = data.trackPrice && data.collectionPrice,
+        priceDom = price ? (<span>
+                              <i className="dollar icon"></i>
+                              {price}
+                            </span>) : null;
 
     return (
-      <div className="card">
-        <a className="image" href={data.trackViewUrl} target="_blank">
-          <img className="ui medium rounded image" src={data.artworkUrl100.replace('100x100', '1200x1200')} />
-        </a>
+      <a className="ui card" href={data.trackViewUrl || data.collectionViewUrl} target="_blank">
+        <div className="image">
+          <img src={data.artworkUrl100.replace('100x100', '1200x1200')} />
+        </div>
         <div className="content">
-          <div className="header">{data.trackName}</div>
+          <div className="header">{data.trackName || data.collectionName}</div>
+          <div className="meta right floated">
+            {capitalize(data.kind)}
+          </div>
           <div className="meta">
-            <a target="_blank" href={data.artistViewUrl}>{data.artistName}</a>
+            {data.artistName}
           </div>
           <div className="description">
-            {data.shortDescription}
+            {data.longDescription}
           </div>
         </div>
         <div className="extra content">
           <span className="right floated">
-            Release on {date}
+            Release on {moment(data.releaseDate).format('MMM DD, YYYY')}
           </span>
-          <span>
-            <i className="dollar icon"></i>
-            {data.trackPrice}
-          </span>
+          {priceDom}
         </div>
-      </div>
+      </a>
     );
 
   }

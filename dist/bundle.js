@@ -56,9 +56,9 @@
 
 	var _componentsApp2 = _interopRequireDefault(_componentsApp);
 
-	__webpack_require__(253);
+	__webpack_require__(254);
 
-	var _cssImgRibbonPng = __webpack_require__(257);
+	var _cssImgRibbonPng = __webpack_require__(258);
 
 	var _cssImgRibbonPng2 = _interopRequireDefault(_cssImgRibbonPng);
 
@@ -20591,7 +20591,7 @@
 	            { className: (0, _classnames2['default'])('ui', 'icon', 'input', {
 	                'loading': this.state.showLoading
 	              }) },
-	            _react2['default'].createElement('input', { type: 'text', onKeyDown: this._search, placeholder: 'Search...' }),
+	            _react2['default'].createElement('input', { type: 'text', onKeyDown: this._search, placeholder: 'Search...', autoFocus: true }),
 	            _react2['default'].createElement('i', { className: 'search icon' })
 	          )
 	        )
@@ -21014,7 +21014,7 @@
 
 	var _List2 = _interopRequireDefault(_List);
 
-	var _Message = __webpack_require__(251);
+	var _Message = __webpack_require__(252);
 
 	var _Message2 = _interopRequireDefault(_Message);
 
@@ -21022,7 +21022,7 @@
 
 	var _emitter2 = _interopRequireDefault(_emitter);
 
-	var _reqwest = __webpack_require__(252);
+	var _reqwest = __webpack_require__(253);
 
 	var _reqwest2 = _interopRequireDefault(_reqwest);
 
@@ -21206,6 +21206,8 @@
 
 	var _moment2 = _interopRequireDefault(_moment);
 
+	var _utils = __webpack_require__(251);
+
 	var Item = (function (_React$Component) {
 	  function Item() {
 	    _classCallCheck(this, Item);
@@ -21220,15 +21222,21 @@
 	    value: function render() {
 
 	      var data = this.props.data,
-	          date = (0, _moment2['default'])(data.releaseDate).format('MMM DD, YYYY');
+	          price = data.trackPrice && data.collectionPrice,
+	          priceDom = price ? _react2['default'].createElement(
+	        'span',
+	        null,
+	        _react2['default'].createElement('i', { className: 'dollar icon' }),
+	        price
+	      ) : null;
 
 	      return _react2['default'].createElement(
-	        'div',
-	        { className: 'card' },
+	        'a',
+	        { className: 'ui card', href: data.trackViewUrl || data.collectionViewUrl, target: '_blank' },
 	        _react2['default'].createElement(
-	          'a',
-	          { className: 'image', href: data.trackViewUrl, target: '_blank' },
-	          _react2['default'].createElement('img', { className: 'ui medium rounded image', src: data.artworkUrl100.replace('100x100', '1200x1200') })
+	          'div',
+	          { className: 'image' },
+	          _react2['default'].createElement('img', { src: data.artworkUrl100.replace('100x100', '1200x1200') })
 	        ),
 	        _react2['default'].createElement(
 	          'div',
@@ -21236,21 +21244,22 @@
 	          _react2['default'].createElement(
 	            'div',
 	            { className: 'header' },
-	            data.trackName
+	            data.trackName || data.collectionName
+	          ),
+	          _react2['default'].createElement(
+	            'div',
+	            { className: 'meta right floated' },
+	            (0, _utils.capitalize)(data.kind)
 	          ),
 	          _react2['default'].createElement(
 	            'div',
 	            { className: 'meta' },
-	            _react2['default'].createElement(
-	              'a',
-	              { target: '_blank', href: data.artistViewUrl },
-	              data.artistName
-	            )
+	            data.artistName
 	          ),
 	          _react2['default'].createElement(
 	            'div',
 	            { className: 'description' },
-	            data.shortDescription
+	            data.longDescription
 	          )
 	        ),
 	        _react2['default'].createElement(
@@ -21260,14 +21269,9 @@
 	            'span',
 	            { className: 'right floated' },
 	            'Release on ',
-	            date
+	            (0, _moment2['default'])(data.releaseDate).format('MMM DD, YYYY')
 	          ),
-	          _react2['default'].createElement(
-	            'span',
-	            null,
-	            _react2['default'].createElement('i', { className: 'dollar icon' }),
-	            data.trackPrice
-	          )
+	          priceDom
 	        )
 	      );
 	    }
@@ -32472,6 +32476,39 @@
 
 /***/ },
 /* 251 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	Object.defineProperty(exports, '__esModule', {
+	  value: true
+	});
+	exports.capitalize = capitalize;
+
+	function capitalize(str) {
+
+	  if (typeof str !== 'string') {
+	    return;
+	  }
+
+	  if (str === 'tv') {
+	    return 'TV';
+	  } else if (str === 'feature') {
+	    return '';
+	  }
+
+	  if (str.indexOf('-') === -1) {
+	    return str.substring(0, 1).toUpperCase() + str.substring(1).toLowerCase();
+	  } else {
+	    var sg = str.split('-');
+	    return capitalize(sg[0]) + ' ' + capitalize(sg[1]);
+	  }
+	}
+
+	;
+
+/***/ },
+/* 252 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -32544,7 +32581,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 252 */
+/* 253 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -33165,16 +33202,16 @@
 
 
 /***/ },
-/* 253 */
+/* 254 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(254);
+	var content = __webpack_require__(255);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(256)(content, {});
+	var update = __webpack_require__(257)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -33191,10 +33228,10 @@
 	}
 
 /***/ },
-/* 254 */
+/* 255 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(255)();
+	exports = module.exports = __webpack_require__(256)();
 	// imports
 
 
@@ -33205,7 +33242,7 @@
 
 
 /***/ },
-/* 255 */
+/* 256 */
 /***/ function(module, exports) {
 
 	/*
@@ -33261,7 +33298,7 @@
 
 
 /***/ },
-/* 256 */
+/* 257 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
@@ -33486,7 +33523,7 @@
 
 
 /***/ },
-/* 257 */
+/* 258 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "5330c88f5cea3a396d4ba8fc90ac6c31.png"

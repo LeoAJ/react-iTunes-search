@@ -42,7 +42,7 @@ class Header extends React.Component {
           <div className={classNames('ui', 'icon', 'input', {
             'loading': this.state.showLoading
           })}>
-            <input type="text" onKeyDown={this._search} placeholder="Search..." />
+            <input type="text" onKeyDown={this._search} placeholder="Search..." autoFocus />
             <i className="search icon"></i>
           </div>
         </h1>

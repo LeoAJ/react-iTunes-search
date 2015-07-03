@@ -1,5 +1,5 @@
 export function capitalize (str) {
-  
+
   if (typeof str !== 'string') {
     return;
   }
@@ -17,4 +17,4 @@ export function capitalize (str) {
     return capitalize(sg[0]) + ' ' + capitalize(sg[1]);
   }
 
-};
+}

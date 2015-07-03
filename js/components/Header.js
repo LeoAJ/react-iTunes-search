@@ -35,7 +35,7 @@ class Header extends React.Component {
   }
 
   render () {
-    
+
     return (
       <div className="ui inverted segment center aligned">
         <h1 className="ui header">

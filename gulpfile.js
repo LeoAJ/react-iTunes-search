@@ -1,8 +1,18 @@
+/*global require */
+
 'use strict';
 
 var gulp = require('gulp'),
     webpack = require('gulp-webpack'),
+    eslint = require('gulp-eslint'),
     open = require('gulp-open');
+
+gulp.task('lint', function () {
+  return gulp.src(['js/**/*.js'])
+              .pipe(eslint('./.eslintrc'))
+              .pipe(eslint.format())
+              .pipe(eslint.failOnError());
+});
 
 gulp.task('webpack', function () {
   return gulp.src('js/app.js')
@@ -15,6 +25,10 @@ gulp.task('open', function () {
       .pipe(open());
 });
 
-gulp.task('default', ['webpack'], function () {
+gulp.task('build', ['lint'], function () {
+  gulp.start('webpack');
+});
+
+gulp.task('default', ['build'], function () {
   gulp.start('open');
 });

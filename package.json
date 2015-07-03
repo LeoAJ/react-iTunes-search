@@ -5,7 +5,6 @@
   "main": "js/app.js",
   "keywords": [
     "react",
-    "flux",
     "itunes",
     "search",
     "apple",
@@ -14,7 +13,11 @@
   ],
   "author": {
     "name": "Leo Hsieh",
-    "url": "http://leoj.net"
+    "url": "http://leoj.js.org"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/LeoAJ/react-itunes-search.git"
   },
   "license": "MIT",
   "peerDependencies": {
@@ -30,10 +33,13 @@
     "reqwest": "^1.1.5"
   },
   "devDependencies": {
+    "babel-eslint": "^3.1.20",
     "babel-loader": "^5.1.4",
     "css-loader": "^0.15.1",
+    "eslint": "^0.24.0",
     "file-loader": "^0.8.4",
     "gulp": "^3.9.0",
+    "gulp-eslint": "^0.15.0",
     "gulp-open": "^0.3.2",
     "gulp-webpack": "^1.5.0",
     "webpack": "^1.9.11"

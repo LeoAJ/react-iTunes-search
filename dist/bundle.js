@@ -56,17 +56,7 @@
 
 	var _componentsApp2 = _interopRequireDefault(_componentsApp);
 
-	__webpack_require__(254);
-
-	var _cssImgRibbonPng = __webpack_require__(258);
-
-	var _cssImgRibbonPng2 = _interopRequireDefault(_cssImgRibbonPng);
-
-	// add github ribbon
-	var img = document.createElement('img');
-	img.src = 'dist/' + _cssImgRibbonPng2['default'];
-	img.classList.add('ribbon');
-	document.querySelector('#github-ribbon').appendChild(img);
+	__webpack_require__(256);
 
 	_react2['default'].render(_react2['default'].createElement(_componentsApp2['default'], null), document.querySelector('#itunes-search'));
 
@@ -20477,6 +20467,10 @@
 
 	var _Container2 = _interopRequireDefault(_Container);
 
+	var _Ribbon = __webpack_require__(254);
+
+	var _Ribbon2 = _interopRequireDefault(_Ribbon);
+
 	var App = (function (_React$Component) {
 	  function App() {
 	    _classCallCheck(this, App);
@@ -20493,7 +20487,8 @@
 	        'div',
 	        null,
 	        _react2['default'].createElement(_Header2['default'], null),
-	        _react2['default'].createElement(_Container2['default'], null)
+	        _react2['default'].createElement(_Container2['default'], null),
+	        _react2['default'].createElement(_Ribbon2['default'], null)
 	      );
 	    }
 	  }]);
@@ -33203,13 +33198,76 @@
 /* 254 */
 /***/ function(module, exports, __webpack_require__) {
 
+	'use strict';
+
+	Object.defineProperty(exports, '__esModule', {
+	  value: true
+	});
+
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+	var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; desc = parent = getter = undefined; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) subClass.__proto__ = superClass; }
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _cssImgRibbonPng = __webpack_require__(255);
+
+	var _cssImgRibbonPng2 = _interopRequireDefault(_cssImgRibbonPng);
+
+	var Ribbon = (function (_React$Component) {
+	  function Ribbon() {
+	    _classCallCheck(this, Ribbon);
+
+	    _get(Object.getPrototypeOf(Ribbon.prototype), 'constructor', this).apply(this, arguments);
+	  }
+
+	  _inherits(Ribbon, _React$Component);
+
+	  _createClass(Ribbon, [{
+	    key: 'render',
+	    value: function render() {
+
+	      var src = 'dist/' + _cssImgRibbonPng2['default'];
+
+	      return _react2['default'].createElement(
+	        'a',
+	        { target: '_blank', href: 'https://github.com/LeoAJ' },
+	        _react2['default'].createElement('img', { src: src, className: 'ribbon' })
+	      );
+	    }
+	  }]);
+
+	  return Ribbon;
+	})(_react2['default'].Component);
+
+	exports['default'] = Ribbon;
+	module.exports = exports['default'];
+
+/***/ },
+/* 255 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__.p + "5330c88f5cea3a396d4ba8fc90ac6c31.png"
+
+/***/ },
+/* 256 */
+/***/ function(module, exports, __webpack_require__) {
+
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(255);
+	var content = __webpack_require__(257);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(257)(content, {});
+	var update = __webpack_require__(259)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -33226,10 +33284,10 @@
 	}
 
 /***/ },
-/* 255 */
+/* 257 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(256)();
+	exports = module.exports = __webpack_require__(258)();
 	// imports
 
 
@@ -33240,7 +33298,7 @@
 
 
 /***/ },
-/* 256 */
+/* 258 */
 /***/ function(module, exports) {
 
 	/*
@@ -33296,7 +33354,7 @@
 
 
 /***/ },
-/* 257 */
+/* 259 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
@@ -33519,12 +33577,6 @@
 			URL.revokeObjectURL(oldSrc);
 	}
 
-
-/***/ },
-/* 258 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = __webpack_require__.p + "5330c88f5cea3a396d4ba8fc90ac6c31.png"
 
 /***/ }
 /******/ ]);

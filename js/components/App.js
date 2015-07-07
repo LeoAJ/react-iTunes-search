@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from './Header';
 import Container from './Container';
+import Ribbon from './Ribbon';
 
 class App extends React.Component {
 
@@ -9,6 +10,7 @@ class App extends React.Component {
       <div>
         <Header />
         <Container />
+        <Ribbon />
       </div>
     );
   }

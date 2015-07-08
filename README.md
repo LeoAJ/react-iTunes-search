@@ -1,7 +1,18 @@
-react-itunes-search
+react-iTunes-search
 ===================
 
-simple web app for itunes search with React
+simple web app for iTunes search with React
+
+Built with
+----------
+
+* react
+* babel
+* ES6
+* gulp
+* webpack
+* eslint
+* semantic UI
 
 Future feature
 --------------
@@ -12,6 +23,7 @@ Future feature
 * footer
 * github like
 * apple logo
+* item list view
 
 License
 -------

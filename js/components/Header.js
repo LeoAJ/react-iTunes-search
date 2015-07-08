@@ -37,15 +37,13 @@ class Header extends React.Component {
   render () {
 
     return (
-      <div className="ui inverted segment center aligned">
-        <h1 className="ui header">
-          <div className={classNames('ui', 'icon', 'input', {
-            'loading': this.state.showLoading
-          })}>
-            <input type="text" onKeyDown={this._search} placeholder="Search..." autoFocus />
-            <i className="search icon"></i>
-          </div>
-        </h1>
+      <div className="ui inverted vertical segment center aligned">
+        <div className={classNames('ui', 'icon', 'input', 'massive', 'right', 'labeled', {
+          'loading': this.state.showLoading
+        })}>
+          <input type="text" onKeyDown={this._search} placeholder="Search..." autoFocus />
+          <i className="search icon"></i>
+        </div>
       </div>
     );
   }

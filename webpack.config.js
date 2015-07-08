@@ -1,3 +1,5 @@
+/*global module */
+
 module.exports = {
   entry: './js/app.js',
   output: {
@@ -16,7 +18,12 @@ module.exports = {
         exclude: /node_modules/
       },
       {
-        test: /\.png$/,
+        test: /\.(woff|woff2|ttf|svg)$/,
+        loader: 'url?limit=100000',
+        exclude: /node_modules/
+      },
+      {
+        test: /\.(eot|png)$/,
         loader: 'file',
         exclude: /node_modules/
       }

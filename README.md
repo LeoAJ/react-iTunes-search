@@ -13,6 +13,7 @@ Built with
 * webpack
 * eslint
 * semantic UI
+* iTunes search API
 
 Future feature
 --------------

@@ -20505,6 +20505,8 @@
 /* 158 */
 /***/ function(module, exports, __webpack_require__) {
 
+	/*global $ */
+
 	'use strict';
 
 	Object.defineProperty(exports, '__esModule', {
@@ -20539,7 +20541,8 @@
 
 	    _get(Object.getPrototypeOf(Header.prototype), 'constructor', this).call(this, props);
 	    this.state = {
-	      showLoading: false
+	      showLoading: false,
+	      media: 'all'
 	    };
 	    this._search = this._search.bind(this);
 	  }
@@ -20551,6 +20554,17 @@
 	    value: function componentDidMount() {
 	      var _this = this;
 
+	      var self = this;
+
+	      // initialize semantic UI dropdown
+	      $('.ui.dropdown').dropdown({
+	        onChange: function onChange(value) {
+	          self.setState({
+	            media: value
+	          });
+	        }
+	      });
+
 	      _emitter2['default'].on('resetLoader', function () {
 	        _this.setState({
 	          showLoading: false
@@ -20560,7 +20574,12 @@
 	  }, {
 	    key: 'componentWillUnmount',
 	    value: function componentWillUnmount() {
+
+	      // remove listener
 	      _emitter2['default'].removeListener('resetLoader');
+
+	      // reset dropdown
+	      $('.ui.dropdown').dropdown('refresh');
 	    }
 	  }, {
 	    key: '_search',
@@ -20570,7 +20589,8 @@
 	        this.setState({
 	          showLoading: true
 	        });
-	        _emitter2['default'].emit('search', e.target.value);
+
+	        _emitter2['default'].emit('search', e.target.value, this.state.media);
 	      }
 	    }
 	  }, {
@@ -20582,11 +20602,33 @@
 	        { className: 'ui inverted vertical segment center aligned' },
 	        _react2['default'].createElement(
 	          'div',
-	          { className: (0, _classnames2['default'])('ui', 'icon', 'input', 'massive', 'right', 'labeled', {
-	              'loading': this.state.showLoading
-	            }) },
+	          { className: 'ui right action left icon input massive' },
+	          _react2['default'].createElement('i', { className: 'search icon' }),
 	          _react2['default'].createElement('input', { type: 'text', onKeyDown: this._search, placeholder: 'Search...', autoFocus: true }),
-	          _react2['default'].createElement('i', { className: 'search icon' })
+	          _react2['default'].createElement(
+	            'div',
+	            { className: 'ui dropdown button' },
+	            _react2['default'].createElement(
+	              'div',
+	              { className: 'text' },
+	              'All'
+	            ),
+	            _react2['default'].createElement('i', { className: 'dropdown icon' }),
+	            _react2['default'].createElement(
+	              'div',
+	              { className: 'menu' },
+	              _react2['default'].createElement(
+	                'div',
+	                { className: 'item' },
+	                'movie'
+	              ),
+	              _react2['default'].createElement(
+	                'div',
+	                { className: 'item' },
+	                'music'
+	              )
+	            )
+	          )
 	        )
 	      );
 	    }
@@ -20991,7 +21033,7 @@
 
 	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
 
-	var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; desc = parent = getter = undefined; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+	var _get = function get(_x2, _x3, _x4) { var _again = true; _function: while (_again) { var object = _x2, property = _x3, receiver = _x4; desc = parent = getter = undefined; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x2 = parent; _x3 = property; _x4 = receiver; _again = true; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
@@ -21065,12 +21107,16 @@
 	      var _this = this;
 
 	      _emitter2['default'].on('search', function (query) {
+	        var media = arguments[1] === undefined ? 'all' : arguments[1];
+
+	        console.log(media);
+
 	        _this.setState({
 	          res: null,
 	          msgInfo: msg.loading
 	        });
 	        (0, _reqwest2['default'])({
-	          url: 'https://itunes.apple.com/search?term=' + query.split(' ').join('+'),
+	          url: 'https://itunes.apple.com/search?media=' + media + '&term=' + query.split(' ').join('+'),
 	          type: 'jsonp'
 	        }).then(function (res) {
 	          _this.setState({

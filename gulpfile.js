@@ -29,6 +29,10 @@ gulp.task('build', ['lint'], function () {
   gulp.start('webpack');
 });
 
-gulp.task('default', ['build'], function () {
+gulp.task('start', ['webpack'], function () {
   gulp.start('open');
+});
+
+gulp.task('default', ['lint'], function () {
+  gulp.start('start');
 });

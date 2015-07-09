@@ -13,6 +13,7 @@ rules:
   yoda: 1
   semi-spacing: 1
   radix: 1
+  no-console: 0
   no-void: 1
   no-sequences: 1
   no-self-compare: 1
@@ -37,4 +38,5 @@ rules:
   quotes: [1, "single", "avoid-escape"]
   global-strict: 0
   no-extra-strict: 1
+  space-infix-ops: 1
   strict: 0

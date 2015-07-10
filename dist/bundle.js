@@ -20595,6 +20595,9 @@
 	    }
 	  }, {
 	    key: 'render',
+
+	    // movie, podcast, music, musicVideo, audiobook, shortFilm, tvShow, software, ebook
+
 	    value: function render() {
 
 	      return _react2['default'].createElement(
@@ -20620,12 +20623,47 @@
 	              _react2['default'].createElement(
 	                'div',
 	                { className: 'item' },
-	                'movie'
+	                'Audiobook'
 	              ),
 	              _react2['default'].createElement(
 	                'div',
 	                { className: 'item' },
-	                'music'
+	                'eBook'
+	              ),
+	              _react2['default'].createElement(
+	                'div',
+	                { className: 'item' },
+	                'Movie'
+	              ),
+	              _react2['default'].createElement(
+	                'div',
+	                { className: 'item' },
+	                'Music'
+	              ),
+	              _react2['default'].createElement(
+	                'div',
+	                { className: 'item' },
+	                'Music Video'
+	              ),
+	              _react2['default'].createElement(
+	                'div',
+	                { className: 'item' },
+	                'Podcast'
+	              ),
+	              _react2['default'].createElement(
+	                'div',
+	                { className: 'item' },
+	                'TV Show'
+	              ),
+	              _react2['default'].createElement(
+	                'div',
+	                { className: 'item' },
+	                'Short Film'
+	              ),
+	              _react2['default'].createElement(
+	                'div',
+	                { className: 'item' },
+	                'Software'
 	              )
 	            )
 	          )
@@ -21061,6 +21099,8 @@
 
 	var _reqwest2 = _interopRequireDefault(_reqwest);
 
+	var _utils = __webpack_require__(251);
+
 	var msg = {
 	  start: {
 	    headerMsg: 'Welcome back!',
@@ -21109,14 +21149,12 @@
 	      _emitter2['default'].on('search', function (query) {
 	        var media = arguments[1] === undefined ? 'all' : arguments[1];
 
-	        console.log(media);
-
 	        _this.setState({
 	          res: null,
 	          msgInfo: msg.loading
 	        });
 	        (0, _reqwest2['default'])({
-	          url: 'https://itunes.apple.com/search?media=' + media + '&term=' + query.split(' ').join('+'),
+	          url: 'https://itunes.apple.com/search?media=' + (0, _utils.getMedia)(media) + '&term=' + query.split(' ').join('+'),
 	          type: 'jsonp'
 	        }).then(function (res) {
 	          _this.setState({
@@ -21261,8 +21299,8 @@
 	    value: function render() {
 
 	      var data = this.props.data,
-	          price = data.trackPrice && data.collectionPrice,
-	          priceDom = price ? _react2['default'].createElement(
+	          price = data.trackPrice || data.collectionPrice || data.price,
+	          priceDom = typeof price === 'number' ? _react2['default'].createElement(
 	        'span',
 	        null,
 	        _react2['default'].createElement('i', { className: 'dollar icon' }),
@@ -21288,7 +21326,7 @@
 	          _react2['default'].createElement(
 	            'div',
 	            { className: 'meta right floated' },
-	            (0, _utils.capitalize)(data.kind)
+	            (0, _utils.getKind)(data.kind)
 	          ),
 	          _react2['default'].createElement(
 	            'div',
@@ -21298,7 +21336,7 @@
 	          _react2['default'].createElement(
 	            'div',
 	            { className: 'description' },
-	            data.longDescription
+	            data.longDescription || data.description
 	          )
 	        ),
 	        _react2['default'].createElement(
@@ -32522,9 +32560,23 @@
 	Object.defineProperty(exports, '__esModule', {
 	  value: true
 	});
-	exports.capitalize = capitalize;
-
+	exports.getMedia = getMedia;
+	exports.getKind = getKind;
 	function capitalize(str) {
+	  return str.substring(0, 1).toUpperCase() + str.substring(1).toLowerCase();
+	}
+
+	function getMedia(str) {
+
+	  if (str.indexOf(' ') === -1) {
+	    return str.toLowerCase();
+	  } else {
+	    var sg = str.split(' ');
+	    return sg[0] + capitalize(sg[1]);
+	  }
+	}
+
+	function getKind(str) {
 
 	  if (typeof str !== 'string') {
 	    return;
@@ -32537,10 +32589,10 @@
 	  }
 
 	  if (str.indexOf('-') === -1) {
-	    return str.substring(0, 1).toUpperCase() + str.substring(1).toLowerCase();
+	    return capitalize(str);
 	  } else {
 	    var sg = str.split('-');
-	    return capitalize(sg[0]) + ' ' + capitalize(sg[1]);
+	    return getKind(sg[0]) + ' ' + capitalize(sg[1]);
 	  }
 	}
 

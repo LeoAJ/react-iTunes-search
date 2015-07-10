@@ -1,14 +1,14 @@
 import React from 'react';
 import moment from 'moment';
-import { capitalize } from '../utils';
+import { getKind } from '../utils';
 
 class Item extends React.Component {
 
   render () {
 
     let data = this.props.data,
-        price = data.trackPrice && data.collectionPrice,
-        priceDom = price ? (<span>
+        price = data.trackPrice || data.collectionPrice || data.price,
+        priceDom = typeof price === 'number' ? (<span>
                               <i className="dollar icon"></i>
                               {price}
                             </span>) : null;
@@ -21,13 +21,13 @@ class Item extends React.Component {
         <div className="content">
           <div className="header">{data.trackName || data.collectionName}</div>
           <div className="meta right floated">
-            {capitalize(data.kind)}
+            {getKind(data.kind)}
           </div>
           <div className="meta">
             {data.artistName}
           </div>
           <div className="description">
-            {data.longDescription}
+            {data.longDescription || data.description}
           </div>
         </div>
         <div className="extra content">

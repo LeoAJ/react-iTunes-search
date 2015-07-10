@@ -3,6 +3,7 @@ import List from './List';
 import Message from './Message';
 import emitter from '../emitter';
 import reqwest from 'reqwest';
+import { getMedia } from '../utils';
 
 let msg = {
   start: {
@@ -42,13 +43,14 @@ class Container extends React.Component {
   }
 
   componentDidMount () {
-    emitter.on('search', (query) => {
+    emitter.on('search', (query, media = 'all') => {
+
       this.setState({
         res: null,
         msgInfo: msg.loading
       });
       reqwest({
-        url: 'https://itunes.apple.com/search?term=' + query.split(' ').join('+'),
+        url: 'https://itunes.apple.com/search?media=' + getMedia(media) + '&term=' + query.split(' ').join('+'),
         type: 'jsonp'
       })
       .then((res) => {

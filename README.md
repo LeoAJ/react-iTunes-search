@@ -19,11 +19,10 @@ Future feature
 --------------
 
 * preview
-* search type
 * increase limit ?
 * footer
 * github like
-* apple logo
+* activate search while changing dropdown
 * item list view
 
 License

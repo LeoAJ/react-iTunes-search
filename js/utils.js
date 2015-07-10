@@ -1,4 +1,19 @@
-export function capitalize (str) {
+function capitalize (str) {
+  return str.substring(0, 1).toUpperCase() + str.substring(1).toLowerCase();
+}
+
+export function getMedia (str) {
+
+  if (str.indexOf(' ') === -1) {
+    return str.toLowerCase();
+  } else {
+    let sg = str.split(' ');
+    return sg[0] + capitalize(sg[1]);
+  }
+
+}
+
+export function getKind (str) {
 
   if (typeof str !== 'string') {
     return;
@@ -11,10 +26,10 @@ export function capitalize (str) {
   }
 
   if (str.indexOf('-') === -1) {
-    return str.substring(0, 1).toUpperCase() + str.substring(1).toLowerCase();
+    return capitalize(str);
   } else {
     let sg = str.split('-');
-    return capitalize(sg[0]) + ' ' + capitalize(sg[1]);
+    return getKind(sg[0]) + ' ' + capitalize(sg[1]);
   }
 
 }

@@ -4,11 +4,10 @@ simple web app for iTunes search with React
 
 ## Installation
 
-```
-git clone git@github.com:LeoAJ/react-iTunes-search.git
-cd react-iTunes-search
-gulp
-```
+1. `git clone git@github.com:LeoAJ/react-iTunes-search.git`
+2. `cd react-iTunes-search`
+3. `npm install`
+4. `gulp`
 
 ## Built with
 

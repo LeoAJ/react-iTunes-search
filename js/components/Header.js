@@ -68,6 +68,7 @@ class Header extends React.Component {
             <div className="text">All</div>
             <i className="dropdown icon"></i>
             <div className="menu">
+              <div className="item">All</div>
               <div className="item">Audiobook</div>
               <div className="item">eBook</div>
               <div className="item">Movie</div>

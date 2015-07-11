@@ -4,7 +4,7 @@ simple web app for iTunes search with React
 
 ## Preview
 
-![](http://i.imgur.com/IzQRskE.gif)
+![Preview Gif](https://raw.github.com/LeoAJ/react-iTunes-search/gif/react-iTunes-search.gif)
 
 ## Installation
 

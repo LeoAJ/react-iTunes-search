@@ -3,7 +3,7 @@
 'use strict';
 
 var gulp = require('gulp'),
-    webpack = require('gulp-webpack'),
+    webpack = require('webpack-stream'),
     eslint = require('gulp-eslint'),
     open = require('gulp-open');
 

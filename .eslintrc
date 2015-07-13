@@ -21,6 +21,7 @@ rules:
   no-extra-bind: 1
   no-extend-native: 1
   no-empty-label: 1
+  no-unused-expressions: 0
   no-alert: 1
   eqeqeq: 1
   dot-notation: 1

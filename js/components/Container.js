@@ -43,14 +43,15 @@ class Container extends React.Component {
   }
 
   componentDidMount () {
-    emitter.on('search', (query, media = 'all') => {
+    emitter.on('search', (state) => {
 
       this.setState({
         res: null,
         msgInfo: msg.loading
       });
+
       reqwest({
-        url: 'https://itunes.apple.com/search?media=' + getMedia(media) + '&term=' + query.split(' ').join('+'),
+        url: 'https://itunes.apple.com/search?media=' + getMedia(state.media || 'all') + '&term=' + state.query.split(' ').join('+'),
         type: 'jsonp'
       })
       .then((res) => {

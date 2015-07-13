@@ -34,7 +34,6 @@ http://leoj.js.org/react-iTunes-search/
 * increase limit ?
 * footer
 * github like
-* activate search while changing dropdown
 * item list view
 
 ## License

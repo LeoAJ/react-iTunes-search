@@ -9,10 +9,11 @@ class Header extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      showLoading: false,
       media: 'all'
     };
+
     this._search = this._search.bind(this);
+    this._onChange = this._onChange.bind(this);
   }
 
   componentDidMount () {
@@ -22,40 +23,35 @@ class Header extends React.Component {
     // initialize semantic UI dropdown
     $('.ui.dropdown').dropdown({
       onChange (value) {
+
         self.setState({
           media: value
         });
+
+        // only start search if there is a search query inside of input box
+        self.state.query && emitter.emit('search', self.state);
+
       }
     });
 
-    emitter.on('resetLoader', () => {
-      this.setState({
-        showLoading: false
-      });
-    });
   }
 
   componentWillUnmount () {
-
-    // remove listener
-    emitter.removeListener('resetLoader');
-
     // reset dropdown
     $('.ui.dropdown').dropdown('refresh');
   }
 
   _search (e) {
     // only trigger search while user type enter
-    if (e.keyCode === 13) {
-      this.setState({
-        showLoading: true
-      });
-
-      emitter.emit('search', e.target.value, this.state.media);
-    }
+    e.keyCode === 13 && emitter.emit('search', this.state);
   }
 
-  // movie, podcast, music, musicVideo, audiobook, shortFilm, tvShow, software, ebook
+  _onChange (e) {
+    // set query state
+    this.setState({
+      query: e.target.value
+    });
+  }
 
   render () {
 
@@ -63,7 +59,7 @@ class Header extends React.Component {
       <div className="ui inverted vertical segment center aligned">
         <div className="ui right action left icon input massive">
           <i className="search icon"></i>
-          <input type="text" onKeyDown={this._search} placeholder="Search..." autoFocus />
+          <input type="text" onKeyDown={this._search} onChange={this._onChange} placeholder="Search..." autoFocus />
           <div className="ui dropdown button">
             <div className="text">All</div>
             <i className="dropdown icon"></i>

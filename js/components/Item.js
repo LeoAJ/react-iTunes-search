@@ -8,10 +8,11 @@ class Item extends React.Component {
 
     let data = this.props.data,
         price = data.trackPrice || data.collectionPrice || data.price,
-        priceDom = typeof price === 'number' ? (<span>
-                              <i className="dollar icon"></i>
-                              {price}
-                            </span>) : null;
+        priceDom = typeof price === 'number' ?
+                                    <span>
+                                      <i className="dollar icon"></i>
+                                      {price}
+                                    </span> : null;
 
     return (
       <a className="ui card" href={data.trackViewUrl || data.collectionViewUrl} target="_blank">

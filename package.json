@@ -22,7 +22,8 @@
   "license": "MIT",
   "peerDependencies": {
     "babel-core": "*",
-    "webpack": "*"
+    "webpack": "*",
+    "xhr2": "*"
   },
   "dependencies": {
     "babel-core": "^5.6.4",
@@ -30,7 +31,7 @@
     "moment": "^2.10.3",
     "node-libs-browser": "^0.5.2",
     "react": "^0.13.3",
-    "reqwest": "^1.1.5"
+    "reqwest": "^2.0.0"
   },
   "devDependencies": {
     "babel-eslint": "^3.1.20",

@@ -20595,72 +20595,72 @@
 
 	      return _react2['default'].createElement(
 	        'div',
-	        { className: 'ui inverted vertical segment center aligned' },
+	        { className: "ui inverted vertical segment center aligned" },
 	        _react2['default'].createElement(
 	          'div',
-	          { className: 'ui right action left icon input massive' },
-	          _react2['default'].createElement('i', { className: 'search icon' }),
-	          _react2['default'].createElement('input', { type: 'text', onKeyDown: this._search, onChange: this._onChange, placeholder: 'Search...', autoFocus: true }),
+	          { className: "ui right action left icon input massive" },
+	          _react2['default'].createElement('i', { className: "search icon" }),
+	          _react2['default'].createElement('input', { type: "text", onKeyDown: this._search, onChange: this._onChange, placeholder: "Search...", autoFocus: true }),
 	          _react2['default'].createElement(
 	            'div',
-	            { className: 'ui dropdown button' },
+	            { className: "ui dropdown button" },
 	            _react2['default'].createElement(
 	              'div',
-	              { className: 'text' },
+	              { className: "text" },
 	              'All'
 	            ),
-	            _react2['default'].createElement('i', { className: 'dropdown icon' }),
+	            _react2['default'].createElement('i', { className: "dropdown icon" }),
 	            _react2['default'].createElement(
 	              'div',
-	              { className: 'menu' },
+	              { className: "menu" },
 	              _react2['default'].createElement(
 	                'div',
-	                { className: 'item' },
+	                { className: "item" },
 	                'All'
 	              ),
 	              _react2['default'].createElement(
 	                'div',
-	                { className: 'item' },
+	                { className: "item" },
 	                'Audiobook'
 	              ),
 	              _react2['default'].createElement(
 	                'div',
-	                { className: 'item' },
+	                { className: "item" },
 	                'eBook'
 	              ),
 	              _react2['default'].createElement(
 	                'div',
-	                { className: 'item' },
+	                { className: "item" },
 	                'Movie'
 	              ),
 	              _react2['default'].createElement(
 	                'div',
-	                { className: 'item' },
+	                { className: "item" },
 	                'Music'
 	              ),
 	              _react2['default'].createElement(
 	                'div',
-	                { className: 'item' },
+	                { className: "item" },
 	                'Music Video'
 	              ),
 	              _react2['default'].createElement(
 	                'div',
-	                { className: 'item' },
+	                { className: "item" },
 	                'Podcast'
 	              ),
 	              _react2['default'].createElement(
 	                'div',
-	                { className: 'item' },
+	                { className: "item" },
 	                'TV Show'
 	              ),
 	              _react2['default'].createElement(
 	                'div',
-	                { className: 'item' },
+	                { className: "item" },
 	                'Short Film'
 	              ),
 	              _react2['default'].createElement(
 	                'div',
-	                { className: 'item' },
+	                { className: "item" },
 	                'Software'
 	              )
 	            )
@@ -21182,7 +21182,7 @@
 
 	      return _react2['default'].createElement(
 	        'div',
-	        { className: 'container' },
+	        { className: "container" },
 	        _react2['default'].createElement(_Message2['default'], { msgInfo: this.state.msgInfo }),
 	        _react2['default'].createElement(_List2['default'], { res: this.state.res })
 	      );
@@ -21243,7 +21243,7 @@
 
 	      return _react2['default'].createElement(
 	        'div',
-	        { className: 'ui link cards' },
+	        { className: "ui link cards" },
 	        results
 	      );
 	    }
@@ -21303,48 +21303,48 @@
 	          priceDom = typeof price === 'number' ? _react2['default'].createElement(
 	        'span',
 	        null,
-	        _react2['default'].createElement('i', { className: 'dollar icon' }),
+	        _react2['default'].createElement('i', { className: "dollar icon" }),
 	        price
 	      ) : null;
 
 	      return _react2['default'].createElement(
 	        'a',
-	        { className: 'ui card', href: data.trackViewUrl || data.collectionViewUrl, target: '_blank' },
+	        { className: "ui card", href: data.trackViewUrl || data.collectionViewUrl, target: "_blank" },
 	        _react2['default'].createElement(
 	          'div',
-	          { className: 'image' },
+	          { className: "image" },
 	          _react2['default'].createElement('img', { src: data.artworkUrl100.replace('100x100', '1200x1200') })
 	        ),
 	        _react2['default'].createElement(
 	          'div',
-	          { className: 'content' },
+	          { className: "content" },
 	          _react2['default'].createElement(
 	            'div',
-	            { className: 'header' },
+	            { className: "header" },
 	            data.trackName || data.collectionName
 	          ),
 	          _react2['default'].createElement(
 	            'div',
-	            { className: 'meta right floated' },
+	            { className: "meta right floated" },
 	            (0, _utils.getKind)(data.kind)
 	          ),
 	          _react2['default'].createElement(
 	            'div',
-	            { className: 'meta' },
+	            { className: "meta" },
 	            data.artistName
 	          ),
 	          _react2['default'].createElement(
 	            'div',
-	            { className: 'description' },
+	            { className: "description" },
 	            data.longDescription || data.description
 	          )
 	        ),
 	        _react2['default'].createElement(
 	          'div',
-	          { className: 'extra content' },
+	          { className: "extra content" },
 	          _react2['default'].createElement(
 	            'span',
-	            { className: 'right floated' },
+	            { className: "right floated" },
 	            'Release on ',
 	            (0, _moment2['default'])(data.releaseDate).format('MMM DD, YYYY')
 	          ),
@@ -21375,7 +21375,7 @@
 	//! momentjs.com
 
 	(function (global, factory) {
-	    true ? module.exports = factory() :
+	     true ? module.exports = factory() :
 	    typeof define === 'function' && define.amd ? define(factory) :
 	    global.moment = factory()
 	}(this, function () { 'use strict';
@@ -24692,7 +24692,7 @@
 	//! author : Werner Mollentze : https://github.com/wernerm
 
 	(function (global, factory) {
-	   true ? factory(__webpack_require__(165)) :
+	    true ? factory(__webpack_require__(165)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -24771,7 +24771,7 @@
 	//! Native plural forms: forabi https://github.com/forabi
 
 	(function (global, factory) {
-	   true ? factory(__webpack_require__(165)) :
+	    true ? factory(__webpack_require__(165)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -24910,7 +24910,7 @@
 	//! author : Abdel Said : https://github.com/abdelsaid
 
 	(function (global, factory) {
-	   true ? factory(__webpack_require__(165)) :
+	    true ? factory(__webpack_require__(165)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -24972,7 +24972,7 @@
 	//! author : Suhail Alkowaileet : https://github.com/xsoh
 
 	(function (global, factory) {
-	   true ? factory(__webpack_require__(165)) :
+	    true ? factory(__webpack_require__(165)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -25078,7 +25078,7 @@
 	//! locale  : Tunisian Arabic (ar-tn)
 
 	(function (global, factory) {
-	   true ? factory(__webpack_require__(165)) :
+	    true ? factory(__webpack_require__(165)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -25140,7 +25140,7 @@
 	//! author : topchiyev : https://github.com/topchiyev
 
 	(function (global, factory) {
-	   true ? factory(__webpack_require__(165)) :
+	    true ? factory(__webpack_require__(165)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -25250,7 +25250,7 @@
 	//! Author : Menelion Elensúle : https://github.com/Oire
 
 	(function (global, factory) {
-	   true ? factory(__webpack_require__(165)) :
+	    true ? factory(__webpack_require__(165)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -25399,7 +25399,7 @@
 	//! author : Krasen Borisov : https://github.com/kraz
 
 	(function (global, factory) {
-	   true ? factory(__webpack_require__(165)) :
+	    true ? factory(__webpack_require__(165)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -25493,7 +25493,7 @@
 	//! author : Kaushik Gandhi : https://github.com/kaushikgandhi
 
 	(function (global, factory) {
-	   true ? factory(__webpack_require__(165)) :
+	    true ? factory(__webpack_require__(165)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -25610,7 +25610,7 @@
 	//! author : Thupten N. Chakrishar : https://github.com/vajradog
 
 	(function (global, factory) {
-	   true ? factory(__webpack_require__(165)) :
+	    true ? factory(__webpack_require__(165)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -25724,7 +25724,7 @@
 	//! author : Jean-Baptiste Le Duigou : https://github.com/jbleduigou
 
 	(function (global, factory) {
-	   true ? factory(__webpack_require__(165)) :
+	    true ? factory(__webpack_require__(165)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -25836,7 +25836,7 @@
 	//! based on (hr) translation by Bojan Marković
 
 	(function (global, factory) {
-	   true ? factory(__webpack_require__(165)) :
+	    true ? factory(__webpack_require__(165)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -25980,7 +25980,7 @@
 	//! author : Juan G. Hurtado : https://github.com/juanghurtado
 
 	(function (global, factory) {
-	   true ? factory(__webpack_require__(165)) :
+	    true ? factory(__webpack_require__(165)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -26063,7 +26063,7 @@
 	//! author : petrbela : https://github.com/petrbela
 
 	(function (global, factory) {
-	   true ? factory(__webpack_require__(165)) :
+	    true ? factory(__webpack_require__(165)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -26224,7 +26224,7 @@
 	//! author : Anatoly Mironov : https://github.com/mirontoli
 
 	(function (global, factory) {
-	   true ? factory(__webpack_require__(165)) :
+	    true ? factory(__webpack_require__(165)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -26291,7 +26291,7 @@
 	//! author : Robert Allen
 
 	(function (global, factory) {
-	   true ? factory(__webpack_require__(165)) :
+	    true ? factory(__webpack_require__(165)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -26374,7 +26374,7 @@
 	//! author : Ulrik Nielsen : https://github.com/mrbase
 
 	(function (global, factory) {
-	   true ? factory(__webpack_require__(165)) :
+	    true ? factory(__webpack_require__(165)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -26439,7 +26439,7 @@
 	//! author: Menelion Elensúle: https://github.com/Oire
 
 	(function (global, factory) {
-	   true ? factory(__webpack_require__(165)) :
+	    true ? factory(__webpack_require__(165)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -26519,7 +26519,7 @@
 	//! author : Martin Groller : https://github.com/MadMG
 
 	(function (global, factory) {
-	   true ? factory(__webpack_require__(165)) :
+	    true ? factory(__webpack_require__(165)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -26597,7 +26597,7 @@
 	//! author : Aggelos Karalias : https://github.com/mehiel
 
 	(function (global, factory) {
-	   true ? factory(__webpack_require__(165)) :
+	    true ? factory(__webpack_require__(165)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -26694,7 +26694,7 @@
 	//! locale : australian english (en-au)
 
 	(function (global, factory) {
-	   true ? factory(__webpack_require__(165)) :
+	    true ? factory(__webpack_require__(165)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -26765,7 +26765,7 @@
 	//! author : Jonathan Abourbih : https://github.com/jonbca
 
 	(function (global, factory) {
-	   true ? factory(__webpack_require__(165)) :
+	    true ? factory(__webpack_require__(165)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -26832,7 +26832,7 @@
 	//! author : Chris Gedrim : https://github.com/chrisgedrim
 
 	(function (global, factory) {
-	   true ? factory(__webpack_require__(165)) :
+	    true ? factory(__webpack_require__(165)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -26905,7 +26905,7 @@
 	//!          Se ne, bonvolu korekti kaj avizi min por ke mi povas lerni!
 
 	(function (global, factory) {
-	   true ? factory(__webpack_require__(165)) :
+	    true ? factory(__webpack_require__(165)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -26980,7 +26980,7 @@
 	//! author : Julio Napurí : https://github.com/julionc
 
 	(function (global, factory) {
-	   true ? factory(__webpack_require__(165)) :
+	    true ? factory(__webpack_require__(165)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -27064,7 +27064,7 @@
 	//! improvements : Illimar Tambek : https://github.com/ragulka
 
 	(function (global, factory) {
-	   true ? factory(__webpack_require__(165)) :
+	    true ? factory(__webpack_require__(165)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -27147,7 +27147,7 @@
 	//! author : Eneko Illarramendi : https://github.com/eillarra
 
 	(function (global, factory) {
-	   true ? factory(__webpack_require__(165)) :
+	    true ? factory(__webpack_require__(165)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -27215,7 +27215,7 @@
 	//! author : Ebrahim Byagowi : https://github.com/ebraminio
 
 	(function (global, factory) {
-	   true ? factory(__webpack_require__(165)) :
+	    true ? factory(__webpack_require__(165)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -27324,7 +27324,7 @@
 	//! author : Tarmo Aidantausta : https://github.com/bleadof
 
 	(function (global, factory) {
-	   true ? factory(__webpack_require__(165)) :
+	    true ? factory(__webpack_require__(165)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -27435,7 +27435,7 @@
 	//! author : Ragnar Johannesen : https://github.com/ragnar123
 
 	(function (global, factory) {
-	   true ? factory(__webpack_require__(165)) :
+	    true ? factory(__webpack_require__(165)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -27499,7 +27499,7 @@
 	//! author : John Fischer : https://github.com/jfroffice
 
 	(function (global, factory) {
-	   true ? factory(__webpack_require__(165)) :
+	    true ? factory(__webpack_require__(165)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -27565,7 +27565,7 @@
 	//! author : Jonathan Abourbih : https://github.com/jonbca
 
 	(function (global, factory) {
-	   true ? factory(__webpack_require__(165)) :
+	    true ? factory(__webpack_require__(165)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -27627,7 +27627,7 @@
 	//! author : Robin van der Vliet : https://github.com/robin0van0der0v
 
 	(function (global, factory) {
-	   true ? factory(__webpack_require__(165)) :
+	    true ? factory(__webpack_require__(165)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -27702,7 +27702,7 @@
 	//! author : Juan G. Hurtado : https://github.com/juanghurtado
 
 	(function (global, factory) {
-	   true ? factory(__webpack_require__(165)) :
+	    true ? factory(__webpack_require__(165)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -27783,7 +27783,7 @@
 	//! author : Tal Ater : https://github.com/TalAter
 
 	(function (global, factory) {
-	   true ? factory(__webpack_require__(165)) :
+	    true ? factory(__webpack_require__(165)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -27867,7 +27867,7 @@
 	//! author : Mayank Singhal : https://github.com/mayanksinghal
 
 	(function (global, factory) {
-	   true ? factory(__webpack_require__(165)) :
+	    true ? factory(__webpack_require__(165)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -27994,7 +27994,7 @@
 	//! author : Bojan Marković : https://github.com/bmarkovic
 
 	(function (global, factory) {
-	   true ? factory(__webpack_require__(165)) :
+	    true ? factory(__webpack_require__(165)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -28138,7 +28138,7 @@
 	//! author : Adam Brunner : https://github.com/adambrunner
 
 	(function (global, factory) {
-	   true ? factory(__webpack_require__(165)) :
+	    true ? factory(__webpack_require__(165)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -28251,7 +28251,7 @@
 	//! author : Armendarabyan : https://github.com/armendarabyan
 
 	(function (global, factory) {
-	   true ? factory(__webpack_require__(165)) :
+	    true ? factory(__webpack_require__(165)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -28367,7 +28367,7 @@
 	//! reference: http://id.wikisource.org/wiki/Pedoman_Umum_Ejaan_Bahasa_Indonesia_yang_Disempurnakan
 
 	(function (global, factory) {
-	   true ? factory(__webpack_require__(165)) :
+	    true ? factory(__webpack_require__(165)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -28453,7 +28453,7 @@
 	//! author : Hinrik Örn Sigurðsson : https://github.com/hinrik
 
 	(function (global, factory) {
-	   true ? factory(__webpack_require__(165)) :
+	    true ? factory(__webpack_require__(165)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -28585,7 +28585,7 @@
 	//! author: Mattia Larentis: https://github.com/nostalgiaz
 
 	(function (global, factory) {
-	   true ? factory(__webpack_require__(165)) :
+	    true ? factory(__webpack_require__(165)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -28658,7 +28658,7 @@
 	//! author : LI Long : https://github.com/baryon
 
 	(function (global, factory) {
-	   true ? factory(__webpack_require__(165)) :
+	    true ? factory(__webpack_require__(165)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -28728,7 +28728,7 @@
 	//! reference: http://jv.wikipedia.org/wiki/Basa_Jawa
 
 	(function (global, factory) {
-	   true ? factory(__webpack_require__(165)) :
+	    true ? factory(__webpack_require__(165)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -28814,7 +28814,7 @@
 	//! author : Irakli Janiashvili : https://github.com/irakli-janiashvili
 
 	(function (global, factory) {
-	   true ? factory(__webpack_require__(165)) :
+	    true ? factory(__webpack_require__(165)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -28921,7 +28921,7 @@
 	//! author : Kruy Vanna : https://github.com/kruyvanna
 
 	(function (global, factory) {
-	   true ? factory(__webpack_require__(165)) :
+	    true ? factory(__webpack_require__(165)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -28987,7 +28987,7 @@
 	//! - Jeeeyul Lee <jeeeyul@gmail.com>
 
 	(function (global, factory) {
-	   true ? factory(__webpack_require__(165)) :
+	    true ? factory(__webpack_require__(165)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -29055,7 +29055,7 @@
 	//! author : mweimerskirch : https://github.com/mweimerskirch, David Raison : https://github.com/kwisatz
 
 	(function (global, factory) {
-	   true ? factory(__webpack_require__(165)) :
+	    true ? factory(__webpack_require__(165)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -29193,7 +29193,7 @@
 	//! author : Mindaugas Mozūras : https://github.com/mmozuras
 
 	(function (global, factory) {
-	   true ? factory(__webpack_require__(165)) :
+	    true ? factory(__webpack_require__(165)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -29313,7 +29313,7 @@
 	//! author : Jānis Elmeris : https://github.com/JanisE
 
 	(function (global, factory) {
-	   true ? factory(__webpack_require__(165)) :
+	    true ? factory(__webpack_require__(165)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -29412,7 +29412,7 @@
 	//! author : Miodrag Nikač <miodrag@restartit.me> : https://github.com/miodragnikac
 
 	(function (global, factory) {
-	   true ? factory(__webpack_require__(165)) :
+	    true ? factory(__webpack_require__(165)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -29525,7 +29525,7 @@
 	//! author : Borislav Mickov : https://github.com/B0k0
 
 	(function (global, factory) {
-	   true ? factory(__webpack_require__(165)) :
+	    true ? factory(__webpack_require__(165)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -29619,7 +29619,7 @@
 	//! author : Floyd Pink : https://github.com/floydpink
 
 	(function (global, factory) {
-	   true ? factory(__webpack_require__(165)) :
+	    true ? factory(__webpack_require__(165)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -29694,7 +29694,7 @@
 	//! author : Harshad Kale : https://github.com/kalehv
 
 	(function (global, factory) {
-	   true ? factory(__webpack_require__(165)) :
+	    true ? factory(__webpack_require__(165)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -29819,7 +29819,7 @@
 	//! author : Weldan Jamili : https://github.com/weldan
 
 	(function (global, factory) {
-	   true ? factory(__webpack_require__(165)) :
+	    true ? factory(__webpack_require__(165)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -29905,7 +29905,7 @@
 	//! author : Squar team, mysquar.com
 
 	(function (global, factory) {
-	   true ? factory(__webpack_require__(165)) :
+	    true ? factory(__webpack_require__(165)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -30003,7 +30003,7 @@
 	//!           Sigurd Gartmann : https://github.com/sigurdga
 
 	(function (global, factory) {
-	   true ? factory(__webpack_require__(165)) :
+	    true ? factory(__webpack_require__(165)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -30067,7 +30067,7 @@
 	//! author : suvash : https://github.com/suvash
 
 	(function (global, factory) {
-	   true ? factory(__webpack_require__(165)) :
+	    true ? factory(__webpack_require__(165)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -30194,7 +30194,7 @@
 	//! author : Joris Röling : https://github.com/jjupiter
 
 	(function (global, factory) {
-	   true ? factory(__webpack_require__(165)) :
+	    true ? factory(__webpack_require__(165)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -30269,7 +30269,7 @@
 	//! author : https://github.com/mechuwind
 
 	(function (global, factory) {
-	   true ? factory(__webpack_require__(165)) :
+	    true ? factory(__webpack_require__(165)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -30333,7 +30333,7 @@
 	//! author : Rafal Hirsz : https://github.com/evoL
 
 	(function (global, factory) {
-	   true ? factory(__webpack_require__(165)) :
+	    true ? factory(__webpack_require__(165)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -30442,7 +30442,7 @@
 	//! author : Jefferson : https://github.com/jalex79
 
 	(function (global, factory) {
-	   true ? factory(__webpack_require__(165)) :
+	    true ? factory(__webpack_require__(165)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -30510,7 +30510,7 @@
 	//! author : Caio Ribeiro Pereira : https://github.com/caio-ribeiro-pereira
 
 	(function (global, factory) {
-	   true ? factory(__webpack_require__(165)) :
+	    true ? factory(__webpack_require__(165)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -30575,7 +30575,7 @@
 	//! author : Valentin Agachi : https://github.com/avaly
 
 	(function (global, factory) {
-	   true ? factory(__webpack_require__(165)) :
+	    true ? factory(__webpack_require__(165)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -30653,7 +30653,7 @@
 	//! Author : Menelion Elensúle : https://github.com/Oire
 
 	(function (global, factory) {
-	   true ? factory(__webpack_require__(165)) :
+	    true ? factory(__webpack_require__(165)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -30820,7 +30820,7 @@
 	//! author : Sampath Sitinamaluwa : https://github.com/sampathsris
 
 	(function (global, factory) {
-	   true ? factory(__webpack_require__(165)) :
+	    true ? factory(__webpack_require__(165)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -30890,7 +30890,7 @@
 	//! based on work of petrbela : https://github.com/petrbela
 
 	(function (global, factory) {
-	   true ? factory(__webpack_require__(165)) :
+	    true ? factory(__webpack_require__(165)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -31051,7 +31051,7 @@
 	//! author : Robert Sedovšek : https://github.com/sedovsek
 
 	(function (global, factory) {
-	   true ? factory(__webpack_require__(165)) :
+	    true ? factory(__webpack_require__(165)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -31217,7 +31217,7 @@
 	//! author : Oerd Cukalla : https://github.com/oerd (fixes)
 
 	(function (global, factory) {
-	   true ? factory(__webpack_require__(165)) :
+	    true ? factory(__webpack_require__(165)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -31288,7 +31288,7 @@
 	//! author : Milan Janačković<milanjanackovic@gmail.com> : https://github.com/milan-j
 
 	(function (global, factory) {
-	   true ? factory(__webpack_require__(165)) :
+	    true ? factory(__webpack_require__(165)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -31400,7 +31400,7 @@
 	//! author : Milan Janačković<milanjanackovic@gmail.com> : https://github.com/milan-j
 
 	(function (global, factory) {
-	   true ? factory(__webpack_require__(165)) :
+	    true ? factory(__webpack_require__(165)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -31512,7 +31512,7 @@
 	//! author : Jens Alm : https://github.com/ulmus
 
 	(function (global, factory) {
-	   true ? factory(__webpack_require__(165)) :
+	    true ? factory(__webpack_require__(165)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -31583,7 +31583,7 @@
 	//! author : Arjunkumar Krishnamoorthy : https://github.com/tk120404
 
 	(function (global, factory) {
-	   true ? factory(__webpack_require__(165)) :
+	    true ? factory(__webpack_require__(165)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -31682,7 +31682,7 @@
 	//! author : Kridsada Thanabulpong : https://github.com/sirn
 
 	(function (global, factory) {
-	   true ? factory(__webpack_require__(165)) :
+	    true ? factory(__webpack_require__(165)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -31751,7 +31751,7 @@
 	//! author : Dan Hagman
 
 	(function (global, factory) {
-	   true ? factory(__webpack_require__(165)) :
+	    true ? factory(__webpack_require__(165)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -31818,7 +31818,7 @@
 	//!           Burak Yiğit Kaya: https://github.com/BYK
 
 	(function (global, factory) {
-	   true ? factory(__webpack_require__(165)) :
+	    true ? factory(__webpack_require__(165)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -31911,7 +31911,7 @@
 	//! author : Abdel Said : https://github.com/abdelsaid
 
 	(function (global, factory) {
-	   true ? factory(__webpack_require__(165)) :
+	    true ? factory(__webpack_require__(165)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -31973,7 +31973,7 @@
 	//! author : Abdel Said : https://github.com/abdelsaid
 
 	(function (global, factory) {
-	   true ? factory(__webpack_require__(165)) :
+	    true ? factory(__webpack_require__(165)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -32036,7 +32036,7 @@
 	//! Author : Menelion Elensúle : https://github.com/Oire
 
 	(function (global, factory) {
-	   true ? factory(__webpack_require__(165)) :
+	    true ? factory(__webpack_require__(165)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -32192,7 +32192,7 @@
 	//! author : Sardor Muminov : https://github.com/muminoff
 
 	(function (global, factory) {
-	   true ? factory(__webpack_require__(165)) :
+	    true ? factory(__webpack_require__(165)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -32254,7 +32254,7 @@
 	//! author : Bang Nguyen : https://github.com/bangnk
 
 	(function (global, factory) {
-	   true ? factory(__webpack_require__(165)) :
+	    true ? factory(__webpack_require__(165)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -32325,7 +32325,7 @@
 	//! author : Zeno Zeng : https://github.com/zenozeng
 
 	(function (global, factory) {
-	   true ? factory(__webpack_require__(165)) :
+	    true ? factory(__webpack_require__(165)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -32455,7 +32455,7 @@
 	//! author : Ben : https://github.com/ben-lin
 
 	(function (global, factory) {
-	   true ? factory(__webpack_require__(165)) :
+	    true ? factory(__webpack_require__(165)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -32647,10 +32647,10 @@
 	        _react2['default'].createElement('i', { className: (0, _classnames2['default'])('icon', msgInfo.icon) }),
 	        _react2['default'].createElement(
 	          'div',
-	          { className: 'content' },
+	          { className: "content" },
 	          _react2['default'].createElement(
 	            'div',
-	            { className: 'header' },
+	            { className: "header" },
 	            msgInfo.headerMsg
 	          ),
 	          _react2['default'].createElement(
@@ -33356,8 +33356,8 @@
 
 	      return _react2['default'].createElement(
 	        'a',
-	        { target: '_blank', href: 'https://github.com/LeoAJ' },
-	        _react2['default'].createElement('img', { src: src, className: 'ribbon' })
+	        { target: "_blank", href: "https://github.com/LeoAJ" },
+	        _react2['default'].createElement('img', { src: src, className: "ribbon" })
 	      );
 	    }
 	  }]);

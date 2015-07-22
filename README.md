@@ -1,6 +1,10 @@
 # react-iTunes-search
 
-[![Dependency Status](https://david-dm.org/LeoAJ/react-iTunes-search.svg)](https://david-dm.org/LeoAJ/react-iTunes-search)
+-----
+
+|dep|
+
+-----
 
 simple web app for iTunes search with React
 
@@ -17,14 +21,13 @@ http://leoj.js.org/react-iTunes-search/
 1. `git clone git@github.com:LeoAJ/react-iTunes-search.git`
 2. `cd react-iTunes-search`
 3. `npm install`
-4. `gulp`
+4. `npm start`
 
 ## Built with
 
 * react
 * babel
 * ES6
-* gulp
 * webpack
 * eslint
 * semantic UI
@@ -41,3 +44,10 @@ http://leoj.js.org/react-iTunes-search/
 ## License
 
 MIT
+
+
+
+
+.. |dep| image:: https://david-dm.org/LeoAJ/react-iTunes-search.svg
+    :target: https://david-dm.org/LeoAJ/react-iTunes-search
+    :alt: Dependency Status

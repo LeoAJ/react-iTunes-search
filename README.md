@@ -1,8 +1,10 @@
-# react-iTunes-search
+*******************
+react-iTunes-search
+*******************
 
 -----
 
-|dep|
+[![Dependency Status](https://david-dm.org/LeoAJ/react-iTunes-search.svg)](https://david-dm.org/LeoAJ/react-iTunes-search)
 
 -----
 
@@ -44,10 +46,3 @@ http://leoj.js.org/react-iTunes-search/
 ## License
 
 MIT
-
-
-
-
-.. |dep| image:: https://david-dm.org/LeoAJ/react-iTunes-search.svg
-    :target: https://david-dm.org/LeoAJ/react-iTunes-search
-    :alt: Dependency Status

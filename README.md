@@ -1,12 +1,6 @@
-*******************
-react-iTunes-search
-*******************
-
------
+# react-iTunes-search
 
 [![Dependency Status](https://david-dm.org/LeoAJ/react-iTunes-search.svg)](https://david-dm.org/LeoAJ/react-iTunes-search)
-
------
 
 simple web app for iTunes search with React
 

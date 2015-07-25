@@ -1,8 +1,9 @@
-/*global $ */
-
 import React from 'react';
 import classNames from 'classnames';
 import emitter from '../emitter';
+import $ from 'jquery';
+import 'imports?$=jquery,jQuery=jquery!../vender/transition';
+import 'imports?$=jquery,jQuery=jquery!../vender/dropdown';
 
 class Header extends React.Component {
 

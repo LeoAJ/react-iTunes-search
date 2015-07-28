@@ -29,14 +29,6 @@ http://leoj.js.org/react-iTunes-search/
 * semantic UI
 * iTunes search API
 
-## Future feature
-
-* preview
-* increase limit ?
-* footer
-* github like
-* item list view
-
 ## License
 
 MIT

@@ -38,6 +38,5 @@ rules:
   comma-dangle: 0
   quotes: [1, "single", "avoid-escape"]
   global-strict: 0
-  no-extra-strict: 1
   space-infix-ops: 1
   strict: 0

@@ -15,7 +15,7 @@ http://leoj.js.org/react-iTunes-search/
 
 ## Detail
 
-To know more detail, please see my [post](http://leoj.js.org/personal/React-iTunes-Search/).
+To know more detail, please read my [post](http://leoj.js.org/personal/React-iTunes-Search/).
 
 ## Installation
 

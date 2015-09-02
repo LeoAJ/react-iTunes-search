@@ -5,7 +5,7 @@ class List extends React.Component {
 
   render () {
 
-    let res = this.props.res,
+    let {res} = this.props,
         results = res ? res.results.map((item) => {
           return (<Item key={item.trackId} data={item} />);
         }) : null;

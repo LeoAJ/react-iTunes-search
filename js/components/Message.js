@@ -5,7 +5,7 @@ class Message extends React.Component {
 
   render () {
 
-    let msgInfo = this.props.msgInfo;
+    let {msgInfo} = this.props;
 
     return (
       <div className={classNames('ui', 'icon', 'message', msgInfo.iconColor, {

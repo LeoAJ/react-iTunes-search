@@ -2,7 +2,6 @@ import React from 'react';
 import List from './List';
 import Message from './Message';
 import emitter from '../emitter';
-import 'xhr2';
 import reqwest from 'reqwest';
 import { getMedia } from '../utils';
 

@@ -260,7 +260,9 @@
 	        currentQueue = queue;
 	        queue = [];
 	        while (++queueIndex < len) {
-	            currentQueue[queueIndex].run();
+	            if (currentQueue) {
+	                currentQueue[queueIndex].run();
+	            }
 	        }
 	        queueIndex = -1;
 	        len = queue.length;
@@ -312,7 +314,6 @@
 	    throw new Error('process.binding is not supported');
 	};
 
-	// TODO(shtylman)
 	process.cwd = function () { return '/' };
 	process.chdir = function (dir) {
 	    throw new Error('process.chdir is not supported');
@@ -33757,9 +33758,7 @@
 
 	var _emitter2 = _interopRequireDefault(_emitter);
 
-	__webpack_require__(258);
-
-	var _reqwest = __webpack_require__(259);
+	var _reqwest = __webpack_require__(258);
 
 	var _reqwest2 = _interopRequireDefault(_reqwest);
 
@@ -45605,13 +45604,6 @@
 
 /***/ },
 /* 258 */
-/***/ function(module, exports) {
-
-	module.exports = XMLHttpRequest;
-
-
-/***/ },
-/* 259 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -45635,7 +45627,7 @@
 	  } else {
 	    var XHR2
 	    try {
-	      XHR2 = __webpack_require__(258)
+	      XHR2 = __webpack_require__(259)
 	    } catch (ex) {
 	      throw new Error('Peer dependency `xhr2` required! Please npm install xhr2')
 	    }
@@ -46243,6 +46235,13 @@
 
 	  return reqwest
 	});
+
+
+/***/ },
+/* 259 */
+/***/ function(module, exports) {
+
+	module.exports = XMLHttpRequest;
 
 
 /***/ },

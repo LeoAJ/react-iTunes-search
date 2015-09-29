@@ -1,19 +1,26 @@
-/*global module */
+var webpack = require('webpack');
 
 module.exports = {
-  entry: './js/app.js',
+  devtool: 'eval',
+  entry: [
+    'webpack-dev-server/client?http://localhost:3000',
+    'webpack/hot/only-dev-server',
+    './js/app'
+  ],
   output: {
+    publicPath: '/dist/',
     path: __dirname + '/dist',
     filename: 'bundle.js'
   },
+  plugins: [
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.NoErrorsPlugin()
+  ],
   module: {
     loaders: [
       {
         test: /\.js$/,
-        loader: 'babel',
-        query: {
-          compact: false
-        },
+        loaders: ['react-hot', 'babel'],
         exclude: /node_modules/
       },
       {

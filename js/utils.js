@@ -1,8 +1,8 @@
-function capitalize (str) {
+let capitalize = (str) => {
   return str.substring(0, 1).toUpperCase() + str.substring(1).toLowerCase();
-}
+};
 
-export function getMedia (str) {
+export let getMedia = (str) => {
 
   if (str.indexOf(' ') === -1) {
     return str.toLowerCase();
@@ -13,7 +13,7 @@ export function getMedia (str) {
 
 }
 
-export function getKind (str) {
+export let getKind = (str) => {
 
   if (typeof str !== 'string') {
     return;

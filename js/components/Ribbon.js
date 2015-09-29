@@ -5,12 +5,10 @@ class Ribbon extends React.Component {
 
   render () {
 
-    let src = 'dist/' + ribbon;
-
     return (
 
       <a target="_blank" href="https://github.com/LeoAJ">
-        <img src={src} className="ribbon" />
+        <img src={ribbon} className="ribbon" />
       </a>
 
     );

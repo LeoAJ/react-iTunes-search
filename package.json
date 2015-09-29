@@ -22,7 +22,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "babel server.js | node",
-    "deploy": "webpack -p",
+    "deploy": "NODE_ENV=production webpack -p --config webpack.production.config.js --progress --colors",
     "lint": "eslint js/**"
   },
   "peerDependencies": {

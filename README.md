@@ -22,7 +22,30 @@ To know more detail, please read my [post](http://leoj.js.org/personal/React-iTu
 1. `git clone git@github.com:LeoAJ/react-iTunes-search.git`
 2. `cd react-iTunes-search`
 3. `npm install`
-4. `npm start`
+
+## Dev
+
+Run webpack dev server with [react-hot-loader](https://github.com/gaearon/react-hot-loader)
+
+```
+npm run dev
+```
+
+## Deploy
+
+Use webpack minify plugin
+
+```
+npm run deploy
+```
+
+## Lint
+
+run eslint
+
+```
+npm run lint
+```
 
 ## Built with
 

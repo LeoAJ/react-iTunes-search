@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import App from './components/App';
 
 // import semantic UI
@@ -20,7 +21,7 @@ import '../css/semantic-ui/transition.min.css';
 // import custom CSS
 import '../css/app.css';
 
-React.render(
+ReactDOM.render(
   <App />,
   document.querySelector('#itunes-search')
 );

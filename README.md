@@ -31,6 +31,8 @@ Run webpack dev server with [react-hot-loader](https://github.com/gaearon/react-
 npm run dev
 ```
 
+and go to `localhost:3000`
+
 ## Deploy
 
 Use webpack minify plugin

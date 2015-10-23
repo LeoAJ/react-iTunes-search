@@ -2,6 +2,7 @@
 
 [![Dependency Status](https://david-dm.org/LeoAJ/react-iTunes-search.svg)](https://david-dm.org/LeoAJ/react-iTunes-search)
 [![devDependency Status](https://david-dm.org/LeoAJ/react-iTunes-search/dev-status.svg)](https://david-dm.org/LeoAJ/react-iTunes-search#info=devDependencies)
+[![npm](https://img.shields.io/npm/l/express.svg)](https://github.com/LeoAJ/react-iTunes-search/blob/master/LICENSE)
 
 simple web app for iTunes search with React
 

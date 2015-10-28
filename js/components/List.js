@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { Component, PropTypes } from 'react';
 import Item from './Item';
 
-class List extends React.Component {
+class List extends Component {
 
   render () {
 
@@ -17,5 +17,9 @@ class List extends React.Component {
   }
 
 }
+
+List.propTypes = {
+  res: PropTypes.object
+};
 
 export default List;

@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { Component } from 'react';
 import ribbon from '../../css/img/ribbon.png';
 
-class Ribbon extends React.Component {
+class Ribbon extends Component {
 
   render () {
 

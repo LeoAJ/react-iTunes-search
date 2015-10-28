@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { Component, PropTypes } from 'react';
 import moment from 'moment';
 import { getKind } from '../utils';
 
-class Item extends React.Component {
+class Item extends Component {
 
   render () {
 
@@ -45,7 +45,7 @@ class Item extends React.Component {
 }
 
 Item.propTypes = {
-  data: React.PropTypes.object.isRequired
+  data: PropTypes.object.isRequired
 };
 
 export default Item;

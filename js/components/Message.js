@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { Component, PropTypes } from 'react';
 import classNames from 'classnames';
 
-class Message extends React.Component {
+class Message extends Component {
 
   render () {
 
@@ -22,5 +22,9 @@ class Message extends React.Component {
   }
 
 }
+
+Message.propTypes = {
+  msgInfo: PropTypes.string.isRequired
+};
 
 export default Message;

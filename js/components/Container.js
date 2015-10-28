@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import List from './List';
 import Message from './Message';
 import emitter from '../emitter';
@@ -32,7 +32,7 @@ let msg = {
   }
 };
 
-class Container extends React.Component {
+class Container extends Component {
 
   constructor(props) {
     super(props);

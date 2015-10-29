@@ -5,7 +5,7 @@ import emitter from '../emitter';
 import reqwest from 'reqwest';
 import { getMedia } from '../utils';
 
-let msg = {
+const msg = {
   start: {
     headerMsg: 'Welcome back!',
     iconColor: 'black',
@@ -80,7 +80,10 @@ class Container extends Component {
   render () {
 
     return (
-      <div className="container">
+      <div style={{
+        margin: '50px auto',
+        maxWidth: '900px'
+        }}>
         <Message msgInfo={this.state.msgInfo} />
         <List res={this.state.res} />
       </div>

@@ -18,9 +18,6 @@ import '../css/semantic-ui/segment.min.css';
 import '../css/semantic-ui/site.min.css';
 import '../css/semantic-ui/transition.min.css';
 
-// import custom CSS
-import '../css/app.css';
-
 ReactDOM.render(
   <App />,
   document.querySelector('#itunes-search')

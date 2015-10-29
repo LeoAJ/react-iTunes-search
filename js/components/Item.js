@@ -6,7 +6,7 @@ class Item extends Component {
 
   render () {
 
-    let {data} = this.props,
+    const {data} = this.props,
         price = data.trackPrice || data.collectionPrice || data.price,
         priceDom = typeof price === 'number' ?
                                     <span>

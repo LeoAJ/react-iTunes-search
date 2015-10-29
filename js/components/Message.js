@@ -5,7 +5,7 @@ class Message extends Component {
 
   render () {
 
-    let {msgInfo} = this.props;
+    const {msgInfo} = this.props;
 
     return (
       <div className={classNames('ui', 'icon', 'message', msgInfo.iconColor, {

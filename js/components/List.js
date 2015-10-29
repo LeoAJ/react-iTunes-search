@@ -5,7 +5,7 @@ class List extends Component {
 
   render () {
 
-    let {res} = this.props;
+    const {res} = this.props;
 
     return (
       <div className="ui link cards">

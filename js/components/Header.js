@@ -9,17 +9,12 @@ class Header extends Component {
 
   constructor(props) {
     super(props);
-    this.state = {
-      media: 'all'
-    };
-
-    this._search = this._search.bind(this);
-    this._onChange = this._onChange.bind(this);
+    this.state = { media: 'all' };
   }
 
   componentDidMount () {
 
-    let self = this;
+    const self = this;
 
     // initialize semantic UI dropdown
     $('.ui.dropdown').dropdown({
@@ -60,7 +55,7 @@ class Header extends Component {
       <div className="ui inverted vertical segment center aligned">
         <div className="ui right action left icon input massive">
           <i className="search icon"></i>
-          <input type="text" onKeyDown={this._search} onChange={this._onChange} placeholder="Search..." autoFocus />
+          <input type="text" onKeyDown={this._search.bind(this)} onChange={this._onChange.bind(this)} placeholder="Search..." autoFocus />
           <div className="ui dropdown button">
             <div className="text">All</div>
             <i className="dropdown icon"></i>

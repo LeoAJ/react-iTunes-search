@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import classNames from 'classnames';
 import emitter from '../emitter';
 import $ from 'jquery';
 import 'imports?$=jquery,jQuery=jquery!../vender/transition';

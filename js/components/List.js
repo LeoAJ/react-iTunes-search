@@ -9,8 +9,8 @@ class List extends Component {
 
     return (
       <div className="ui link cards">
-        {res ? res.results.map((item) => {
-          return (<Item key={item.trackId} data={item} />);
+        {res ? res.results.map((item, index) => {
+          return (<Item key={index} data={item} />);
         }) : null}
       </div>
     );

@@ -1,3 +1,5 @@
+/* globals module require __dirname */
+
 var webpack = require('webpack');
 
 module.exports = {

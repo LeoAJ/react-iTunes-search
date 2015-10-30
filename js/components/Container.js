@@ -5,40 +5,13 @@ import emitter from '../emitter';
 import reqwest from 'reqwest';
 import { getMedia } from '../utils';
 
-const msg = {
-  start: {
-    headerMsg: 'Welcome back!',
-    iconColor: 'black',
-    icon: 'help',
-    bodyMsg: 'Please use enter to start search!'
-  },
-  loading: {
-    headerMsg: 'Just one second',
-    iconColor: 'blue',
-    icon: 'notched circle loading',
-    bodyMsg: 'Fetching data......'
-  },
-  noContent: {
-    headerMsg: 'No search results',
-    iconColor: 'yellow',
-    icon: 'warning',
-    bodyMsg: 'There is no data.'
-  },
-  error: {
-    headerMsg: 'Error',
-    iconColor: 'red',
-    icon: 'warning sign',
-    bodyMsg: 'We\'re sorry please try again later.'
-  }
-};
-
 class Container extends Component {
 
   constructor(props) {
     super(props);
     this.state = {
       res: null,
-      msgInfo: msg.start
+      type: 'start'
     };
   }
 
@@ -47,7 +20,7 @@ class Container extends Component {
 
       this.setState({
         res: null,
-        msgInfo: msg.loading
+        type: 'loading'
       });
 
       reqwest({
@@ -57,13 +30,13 @@ class Container extends Component {
       .then((res) => {
         this.setState({
           res: res,
-          msgInfo: res.resultCount ? false : msg.noContent
+          type: res.resultCount || 'noContent'
         });
       })
       .fail((err) => {
         this.setState({
           res: null,
-          msgInfo: msg.error
+          type: 'error'
         });
       })
       .always(() => {
@@ -84,7 +57,7 @@ class Container extends Component {
         margin: '50px auto',
         maxWidth: '900px'
         }}>
-        <Message msgInfo={this.state.msgInfo} />
+        <Message type={this.state.type} />
         <List res={this.state.res} />
       </div>
     );

@@ -29,7 +29,7 @@ To know more detail, please read my [post](http://leoj.js.org/personal/React-iTu
 Run webpack dev server with [react-hot-loader](https://github.com/gaearon/react-hot-loader)
 
 ```
-npm run dev
+npm start
 ```
 
 and go to `localhost:3000`

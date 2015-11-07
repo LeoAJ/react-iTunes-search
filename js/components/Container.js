@@ -9,39 +9,21 @@ class Container extends Component {
 
   constructor(props) {
     super(props);
-    this.state = {
-      res: null,
-      type: 'start'
-    };
+    this.state = { res: null, type: 'start' };
   }
 
   componentDidMount () {
     emitter.on('search', (state) => {
 
-      this.setState({
-        res: null,
-        type: 'loading'
-      });
+      this.setState({ res: null, type: 'loading' });
 
       reqwest({
         url: 'https://itunes.apple.com/search?media=' + getMedia(state.media || 'all') + '&term=' + state.query.split(' ').join('+'),
         type: 'jsonp'
       })
-      .then((res) => {
-        this.setState({
-          res,
-          type: res.resultCount || 'noContent'
-        });
-      })
-      .fail((err) => {
-        this.setState({
-          res: null,
-          type: 'error'
-        });
-      })
-      .always(() => {
-        emitter.emit('resetLoader');
-      });
+      .then(res => this.setState({ res, type: res.resultCount || 'noContent'}))
+      .fail(err => this.setState({ res: null, type: 'error' }))
+      .always(() => emitter.emit('resetLoader'));
     });
 
   }

@@ -7,12 +7,12 @@ class Item extends Component {
   render () {
 
     const {data} = this.props,
-        price = data.trackPrice || data.collectionPrice || data.price,
-        priceDom = typeof price === 'number' ?
-                                    <span>
-                                      <i className="dollar icon"></i>
-                                      {price}
-                                    </span> : null;
+          price = data.trackPrice || data.collectionPrice || data.price,
+          priceDom = typeof price === 'number' ?
+                                      <span>
+                                        <i className="dollar icon"></i>
+                                        {price}
+                                      </span> : null;
 
     return (
       <a className="ui card" href={data.trackViewUrl || data.collectionViewUrl} target="_blank">

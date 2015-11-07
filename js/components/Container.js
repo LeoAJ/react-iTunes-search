@@ -29,7 +29,7 @@ class Container extends Component {
       })
       .then((res) => {
         this.setState({
-          res: res,
+          res,
           type: res.resultCount || 'noContent'
         });
       })

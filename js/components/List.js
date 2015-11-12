@@ -5,11 +5,11 @@ class List extends Component {
 
   render () {
 
-    const {res} = this.props;
+    const { res } = this.props;
 
     return (
       <div className="ui link cards">
-        {res ? res.results.map((item, index) => <Item key={index} data={item} /> ) : null}
+        {res ? res.results.map((item, index) => <Item key={index} {...item} /> ) : null}
       </div>
     );
   }

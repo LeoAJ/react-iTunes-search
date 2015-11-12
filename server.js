@@ -8,8 +8,8 @@ const port = 3000,
 new WebpackDevServer(webpack(config), {
   publicPath: config.output.publicPath,
   hot: true,
-  stats  : {
-    colors : true
+  stats: {
+    colors: true
   },
   historyApiFallback: true
 }).listen(port, host, function (err, result) {

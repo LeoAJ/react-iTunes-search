@@ -26,7 +26,7 @@
     "jquery": "^2.1.4",
     "moment": "^2.10.3",
     "node-libs-browser": "^0.5.2",
-    "radium": "^0.14.3",
+    "radium": "^0.15.1",
     "react": "^0.14.0",
     "react-dom": "^0.14.0",
     "reqwest": "^2.0.5",

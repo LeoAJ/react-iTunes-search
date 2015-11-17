@@ -52,8 +52,4 @@ class Message extends Component {
 
 }
 
-Message.propTypes = {
-  msgInfo: PropTypes.string.isRequired
-};
-
 export default Message;

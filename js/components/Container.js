@@ -21,7 +21,7 @@ class Container extends Component {
         url: 'https://itunes.apple.com/search?media=' + getMedia(state.media || 'all') + '&term=' + state.query.split(' ').join('+'),
         type: 'jsonp'
       })
-      .then(res => this.setState({ res, type: res.resultCount || 'noContent'}))
+      .then(response => this.setState({ response, type: response.resultCount || 'noContent'}))
       .fail(err => this.setState({ res: null, type: 'error' }))
       .always(() => emitter.emit('resetLoader'));
     });
@@ -34,13 +34,15 @@ class Container extends Component {
 
   render () {
 
+    const {type, response} = this.state;
+    
     return (
       <div style={{
         margin: '50px auto',
         maxWidth: '900px'
         }}>
-        <Message type={this.state.type} />
-        <List res={this.state.res} />
+        <Message type={type} />
+        <List {...response} />
       </div>
     );
   }

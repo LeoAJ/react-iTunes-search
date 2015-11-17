@@ -5,19 +5,15 @@ class List extends Component {
 
   render () {
 
-    const { res } = this.props;
+    const { results, resultCount } = this.props;
 
     return (
       <div className="ui link cards">
-        {res ? res.results.map((item, index) => <Item key={index} {...item} /> ) : null}
+        {resultCount > 0 ? results.map((item, index) => <Item key={index} {...item} /> ) : null}
       </div>
     );
   }
 
 }
-
-List.propTypes = {
-  res: PropTypes.object
-};
 
 export default List;

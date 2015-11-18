@@ -1,4 +1,4 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
 import moment from 'moment';
 import { getKind } from '../utils';
 
@@ -26,7 +26,7 @@ class Item extends Component {
                                         <i className="dollar icon"></i>
                                         {finalPrice}
                                       </span> : null;
-                                      
+
     return (
       <a className="ui card" href={trackViewUrl || collectionViewUrl} target="_blank">
         <div className="image">

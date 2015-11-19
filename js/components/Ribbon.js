@@ -19,9 +19,8 @@ class Ribbon extends Component {
 
     return (
 
-      <a target="_blank" href="https://github.com/LeoAJ">
-        <img src={ribbon.indexOf('dist') === -1 ? 'dist/' + ribbon : ribbon.substring(1)}
-             style={style} />
+      <a target="_blank" href="https://github.com/LeoAJ/react-iTunes-search">
+        <img src={ribbon.indexOf('dist') === -1 ? 'dist/' + ribbon : ribbon.substring(1)} style={style} />
       </a>
 
     );

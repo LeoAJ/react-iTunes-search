@@ -34,8 +34,8 @@ class Container extends Component {
 
   render () {
 
-    const {type, response} = this.state;
-    
+    const { type, response } = this.state;
+
     return (
       <div style={{
         margin: '50px auto',

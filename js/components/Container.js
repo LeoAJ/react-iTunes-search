@@ -9,20 +9,20 @@ class Container extends Component {
 
   constructor(props) {
     super(props);
-    this.state = { res: null, type: 'start' };
+    this.state = { type: 'start' };
   }
 
   componentDidMount () {
     emitter.on('search', (state) => {
 
-      this.setState({ res: null, type: 'loading' });
+      this.setState({ type: 'loading' });
 
       reqwest({
         url: 'https://itunes.apple.com/search?media=' + getMedia(state.media || 'all') + '&term=' + state.query.split(' ').join('+'),
         type: 'jsonp'
       })
       .then(response => this.setState({ response, type: response.resultCount || 'noContent' }))
-      .fail(err => this.setState({ res: null, type: 'error' }))
+      .fail(err => this.setState({ type: 'error' }))
       .always(() => emitter.emit('resetLoader'));
     });
 
@@ -32,7 +32,7 @@ class Container extends Component {
     emitter.removeListener('search');
   }
 
-  render () {
+  mainRender() {
 
     const { type, response } = this.state;
     const msgMap = {
@@ -62,15 +62,24 @@ class Container extends Component {
       }
     };
 
-    const msg = msgMap[type] || { hiddenMsg: true };
+    const msg = msgMap[type];
+
+    if (msg) {
+      return (<Message {...msg} />);
+    } else {
+      return (<List {...response} />);
+    }
+
+  }
+
+  render () {
 
     return (
       <div style={{
         margin: '50px auto',
         maxWidth: '900px'
         }}>
-        <Message {...msg} />
-        <List {...response} />
+      {this.mainRender()}
       </div>
     );
   }

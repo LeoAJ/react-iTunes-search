@@ -45,6 +45,6 @@ const Item = (({
       }
     </div>
   </a>
-))
+));
 
 export default Item;

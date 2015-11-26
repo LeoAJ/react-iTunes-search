@@ -35,13 +35,41 @@ class Container extends Component {
   render () {
 
     const { type, response } = this.state;
+    const msgMap = {
+      start: {
+        headerMsg: 'Welcome back!',
+        iconColor: 'black',
+        icon: 'help',
+        bodyMsg: 'Please use enter to start search!'
+      },
+      loading: {
+        headerMsg: 'Just one second',
+        iconColor: 'blue',
+        icon: 'notched circle loading',
+        bodyMsg: 'Fetching data......'
+      },
+      noContent: {
+        headerMsg: 'No search results',
+        iconColor: 'yellow',
+        icon: 'warning',
+        bodyMsg: 'There is no data.'
+      },
+      error: {
+        headerMsg: 'Error',
+        iconColor: 'red',
+        icon: 'warning sign',
+        bodyMsg: 'We\'re sorry please try again later.'
+      }
+    };
+
+    const msg = msgMap[type] || { hiddenMsg: true };
 
     return (
       <div style={{
         margin: '50px auto',
         maxWidth: '900px'
         }}>
-        <Message type={type} />
+        <Message {...msg} />
         <List {...response} />
       </div>
     );

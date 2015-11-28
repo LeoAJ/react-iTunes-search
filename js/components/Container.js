@@ -22,8 +22,7 @@ class Container extends Component {
         type: 'jsonp'
       })
       .then(response => this.setState({ response, type: response.resultCount || 'noContent' }))
-      .fail(err => this.setState({ type: 'error' }))
-      .always(() => emitter.emit('resetLoader'));
+      .fail(err => this.setState({ type: 'error' }));
     });
 
   }

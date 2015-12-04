@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { render } from 'react-dom';
 import App from './components/App';
 
 // import semantic UI
@@ -18,7 +18,7 @@ import '../css/semantic-ui/segment.min.css';
 import '../css/semantic-ui/site.min.css';
 import '../css/semantic-ui/transition.min.css';
 
-ReactDOM.render(
+render(
   <App />,
   document.querySelector('#itunes-search')
 );

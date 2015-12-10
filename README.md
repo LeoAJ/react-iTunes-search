@@ -29,7 +29,7 @@ To know more detail, please read my [post](http://leoj.js.org/personal/React-iTu
 Run webpack dev server with [react-hot-loader](https://github.com/gaearon/react-hot-loader)
 
 >##### Deprecation Notice
-> React Hot Loader is going to deprecate, please check [react-transform-boilerplate](https://github.com/gaearon/react-transform-boilerplate) instead for future development. **This app is not going to update for this deprecation.**.
+> React Hot Loader is going to deprecate, please check [react-transform-boilerplate](https://github.com/gaearon/react-transform-boilerplate) instead for future development. **This app is not going to update for this deprecation.**
 
 ```
 npm start
@@ -56,7 +56,7 @@ npm run lint
 ## Built with
 
 * react
-* babel
+* babel 6
 * ES6
 * webpack
 * eslint

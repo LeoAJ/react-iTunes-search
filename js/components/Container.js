@@ -77,8 +77,8 @@ class Container extends Component {
       <div style={{
         margin: '50px auto',
         maxWidth: '900px'
-        }}>
-      {this.mainRender()}
+      }}>
+        {this.mainRender()}
       </div>
     );
   }

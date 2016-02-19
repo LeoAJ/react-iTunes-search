@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import moment from 'moment';
 import { getKind } from '../utils';
 
-const Item = (({
+const Item = ({
   trackPrice,
   collectionPrice,
   price,
@@ -45,6 +45,22 @@ const Item = (({
       }
     </div>
   </a>
-));
+);
+
+Item.propTypes = {
+  trackPrice: PropTypes.number,
+  collectionPrice: PropTypes.number,
+  price: PropTypes.number,
+  trackViewUrl: PropTypes.string,
+  collectionViewUrl: PropTypes.string,
+  artworkUrl100: PropTypes.string,
+  trackName: PropTypes.string,
+  collectionName: PropTypes.string,
+  kind: PropTypes.string,
+  artistName: PropTypes.string,
+  longDescription: PropTypes.string,
+  description: PropTypes.string,
+  releaseDate: PropTypes.string
+};
 
 export default Item;

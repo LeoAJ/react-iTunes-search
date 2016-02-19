@@ -13,10 +13,10 @@ const style = {
   }
 };
 
-const Ribbon = (() => (
+const Ribbon = () => (
   <a target="_blank" href="https://github.com/LeoAJ/react-iTunes-search">
     <img src={ribbon.indexOf('dist') === -1 ? 'dist/' + ribbon : ribbon.substring(1)} style={style} />
   </a>
-));
+);
 
 export default Radium(Ribbon);

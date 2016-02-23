@@ -5,10 +5,9 @@ function capitalize(str) {
 export function getMedia(str) {
   if (str.indexOf(' ') === -1) {
     return str.toLowerCase();
-  } else {
-    const sg = str.split(' ');
-    return sg[0] + capitalize(sg[1]);
   }
+  const sg = str.split(' ');
+  return sg[0] + capitalize(sg[1]);
 }
 
 export function getKind(str) {
@@ -24,8 +23,7 @@ export function getKind(str) {
 
   if (str.indexOf('-') === -1) {
     return capitalize(str);
-  } else {
-    const sg = str.split('-');
-    return getKind(sg[0]) + ' ' + capitalize(sg[1]);
   }
+  const sg = str.split('-');
+  return `${getKind(sg[0])} ${capitalize(sg[1])}`;
 }

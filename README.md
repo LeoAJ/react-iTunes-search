@@ -47,7 +47,7 @@ npm run deploy
 
 ## Lint
 
-run eslint
+run eslint, using [eslint-config-airbnb](https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb) rules.
 
 ```
 npm run lint
@@ -55,12 +55,12 @@ npm run lint
 
 ## Built with
 
-* react
-* babel 6
+* React
+* Babel 6
 * ES6
-* webpack
-* eslint
-* semantic UI
+* Webpack
+* Eslint 2.0
+* Semantic UI
 * iTunes search API
 
 ## License

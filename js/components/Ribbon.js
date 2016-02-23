@@ -1,5 +1,5 @@
 import React from 'react';
-import Radium from 'radium';
+import radium from 'radium';
 import ribbon from '../../css/img/ribbon.png';
 
 const style = {
@@ -15,8 +15,10 @@ const style = {
 
 const Ribbon = () => (
   <a target="_blank" href="https://github.com/LeoAJ/react-iTunes-search">
-    <img src={ribbon.indexOf('dist') === -1 ? 'dist/' + ribbon : ribbon.substring(1)} style={style} />
+    <img src={ribbon.indexOf('dist') === -1
+              ? `dist/${ribbon}`
+              : ribbon.substring(1)} style={style} />
   </a>
 );
 
-export default Radium(Ribbon);
+export default radium(Ribbon);

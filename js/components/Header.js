@@ -13,50 +13,46 @@ class Header extends Component {
     this._onChange = this._onChange.bind(this);
   }
 
-  componentDidMount () {
-
+  componentDidMount() {
     const self = this;
 
     // initialize semantic UI dropdown
     $('.ui.dropdown').dropdown({
-      onChange (value) {
-
-        self.setState({
-          media: value
-        });
-
+      onChange(value) {
+        self.setState({ media: value });
         // only start search if there is a search query inside of input box
         self.state.query && emitter.emit('search', self.state);
-
       }
     });
-
   }
 
-  componentWillUnmount () {
+  componentWillUnmount() {
     // reset dropdown
     $('.ui.dropdown').dropdown('refresh');
   }
 
-  _search (e) {
+  _search(e) {
     // only trigger search while user type enter
     e.keyCode === 13 && emitter.emit('search', this.state);
   }
 
-  _onChange (e) {
+  _onChange(e) {
     // set query state
     this.setState({
       query: e.target.value
     });
   }
 
-  render () {
-
+  render() {
     return (
       <div className="ui inverted vertical segment center aligned">
         <div className="ui right action left icon input massive">
           <i className="search icon"></i>
-          <input type="text" onKeyDown={this._search} onChange={this._onChange} placeholder="Search..." autoFocus />
+          <input type="text"
+                 onKeyDown={this._search}
+                 onChange={this._onChange}
+                 placeholder="Search..." autoFocus
+          />
           <div className="ui dropdown button">
             <div className="text">All</div>
             <i className="dropdown icon"></i>
@@ -77,7 +73,6 @@ class Header extends Component {
       </div>
     );
   }
-
 }
 
 export default Header;

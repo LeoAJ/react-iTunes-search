@@ -12,27 +12,24 @@ class Container extends Component {
     this.state = { type: 'start' };
   }
 
-  componentDidMount () {
+  componentDidMount() {
     emitter.on('search', (state) => {
-
       this.setState({ type: 'loading' });
 
       reqwest({
-        url: 'https://itunes.apple.com/search?media=' + getMedia(state.media || 'all') + '&term=' + state.query.split(' ').join('+'),
+        url: `https://itunes.apple.com/search?media=${getMedia(state.media || 'all')}&term=${state.query.split(' ').join('+')}`,
         type: 'jsonp'
       })
       .then(response => this.setState({ response, type: response.resultCount || 'noContent' }))
       .fail(err => this.setState({ type: 'error' }));
     });
-
   }
 
-  componentWillUnmount () {
+  componentWillUnmount() {
     emitter.removeListener('search');
   }
 
   mainRender() {
-
     const { type, response } = this.state;
     const msgMap = {
       start: {
@@ -65,14 +62,11 @@ class Container extends Component {
 
     if (msg) {
       return (<Message {...msg} />);
-    } else {
-      return (<List {...response} />);
     }
-
+    return (<List {...response} />);
   }
 
-  render () {
-
+  render() {
     return (
       <div style={{
         margin: '50px auto',

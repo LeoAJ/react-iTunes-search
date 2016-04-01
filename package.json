@@ -26,10 +26,10 @@
     "start": "npm run dev"
   },
   "dependencies": {
+    "aphrodite": "^0.2.0",
     "classnames": "^2.2.3",
     "jquery": "^2.2.1",
     "moment": "^2.12.0",
-    "radium": "^0.17.0",
     "react": "^0.14.7",
     "react-dom": "^0.14.7",
     "reqwest": "^2.0.5",

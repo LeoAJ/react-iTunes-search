@@ -2,15 +2,14 @@ import React from 'react';
 import Header from './Header';
 import Container from './Container';
 import Ribbon from './Ribbon';
-import { StyleRoot } from 'radium';
 
 const App = () => {
   return (
-    <StyleRoot>
+    <div>
       <Header />
       <Container />
       <Ribbon />
-    </StyleRoot>
+    </div>
   );
 };
 

@@ -19,7 +19,7 @@ const Item = ({
 }) => (
   <a className="ui card" href={trackViewUrl || collectionViewUrl} target="_blank">
     <div className="image">
-      <img src={artworkUrl100.replace('100x100', '1200x1200')} />
+      <img alt="img" src={artworkUrl100.replace('100x100', '1200x1200')} />
     </div>
     <div className="content">
       <div className="header">{trackName || collectionName}</div>

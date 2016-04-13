@@ -17,9 +17,12 @@ const style = StyleSheet.create({
 
 const Ribbon = () => (
   <a target="_blank" href="https://github.com/LeoAJ/react-iTunes-search">
-    <img src={ribbon.indexOf('dist') === -1
-              ? `dist/${ribbon}`
-              : ribbon.substring(1)} className={css(style.ribbon)} />
+    <img alt="img" src={
+      ribbon.indexOf('dist') === -1
+        ? `dist/${ribbon}`
+        : ribbon.substring(1)} className={css(style.ribbon)
+      }
+    />
   </a>
 );
 

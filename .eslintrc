@@ -12,7 +12,8 @@ plugins:
   - react
 
 extends:
-  "airbnb/base"
+  - airbnb/base
+  - airbnb/rules/react
 
 rules:
   no-unused-vars: 0

@@ -49,9 +49,10 @@ class Header extends Component {
         <div className="ui right action left icon input massive">
           <i className="search icon"></i>
           <input type="text"
-                 onKeyDown={this._search}
-                 onChange={this._onChange}
-                 placeholder="Search..." autoFocus
+            onKeyDown={this._search}
+            onChange={this._onChange}
+            placeholder="Search..."
+            autoFocus
           />
           <div className="ui dropdown button">
             <div className="text">All</div>

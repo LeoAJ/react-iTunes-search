@@ -26,9 +26,9 @@
     "start": "npm run dev"
   },
   "dependencies": {
-    "aphrodite": "^0.2.0",
     "classnames": "^2.2.3",
     "jquery": "^2.2.1",
+    "jss": "^3.6.3",
     "moment": "^2.12.0",
     "react": "^15.0.1",
     "react-dom": "^15.0.1",
@@ -47,7 +47,7 @@
     "eslint": "^2.4.0",
     "eslint-config-airbnb": "^7.0.0",
     "eslint-plugin-jsx-a11y": "^0.6.2",
-    "eslint-plugin-react": "^4.2.1",
+    "eslint-plugin-react": "^5.0.0",
     "estraverse-fb": "^1.3.1",
     "file-loader": "^0.8.5",
     "imports-loader": "^0.6.5",

@@ -21,7 +21,8 @@ const { classes } = jss.createStyleSheet(style).attach();
 
 const Ribbon = () => (
   <a target="_blank" href="https://github.com/LeoAJ/react-iTunes-search">
-    <img alt="img"
+    <img
+      alt="img"
       className={classes.ribbon}
       src={
       ribbon.indexOf('dist') === -1

@@ -1,3 +1,5 @@
+/* eslint import/no-unresolved: 0 */
+
 import React, { Component } from 'react';
 import emitter from '../emitter';
 import $ from 'jquery';
@@ -48,7 +50,8 @@ class Header extends Component {
       <div className="ui inverted vertical segment center aligned">
         <div className="ui right action left icon input massive">
           <i className="search icon"></i>
-          <input type="text"
+          <input
+            type="text"
             onKeyDown={this._search}
             onChange={this._onChange}
             placeholder="Search..."

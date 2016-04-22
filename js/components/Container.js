@@ -68,10 +68,11 @@ class Container extends Component {
 
   render() {
     return (
-      <div style={{
-        margin: '50px auto',
-        maxWidth: '900px'
-      }}
+      <div
+        style={{
+          margin: '50px auto',
+          maxWidth: '900px'
+        }}
       >
         {this.mainRender()}
       </div>

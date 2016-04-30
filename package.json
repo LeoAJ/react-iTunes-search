@@ -19,7 +19,7 @@
   "license": "MIT",
   "scripts": {
     "clean": "rimraf dist/",
-    "build": "NODE_ENV=production webpack -p --config webpack.production.config.js --progress --colors",
+    "build": "webpack -p --config webpack.production.config.js --progress --colors --define process.env.NODE_ENV='\"production\"'",
     "dev": "babel-node server.js",
     "deploy": "npm run clean && npm run build",
     "lint": "eslint js/**",

@@ -7,12 +7,11 @@ import { getMedia } from '../utils';
 
 class Container extends Component {
 
-  constructor(props) {
-    super(props);
-    this.state = { type: 'start' };
-  }
+  state = {
+    type: 'start'
+  };
 
-  componentDidMount() {
+  componentDidMount = () => {
     emitter.on('search', (state) => {
       this.setState({ type: 'loading' });
 
@@ -23,13 +22,13 @@ class Container extends Component {
       .then(response => this.setState({ response, type: response.resultCount || 'noContent' }))
       .fail(err => this.setState({ type: 'error' }));
     });
-  }
+  };
 
-  componentWillUnmount() {
+  componentWillUnmount = () => {
     emitter.removeListener('search');
-  }
+  };
 
-  mainRender() {
+  mainRender = () => {
     const { type, response } = this.state;
     const msgMap = {
       start: {
@@ -64,7 +63,7 @@ class Container extends Component {
       return (<Message {...msg} />);
     }
     return (<List {...response} />);
-  }
+  };
 
   render() {
     return (

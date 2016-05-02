@@ -1,5 +1,3 @@
-/* eslint import/no-unresolved: 0 */
-
 import React, { Component } from 'react';
 import emitter from '../emitter';
 import $ from 'jquery';
@@ -8,16 +6,12 @@ import 'imports?$=jquery,jQuery=jquery!../vendor/dropdown';
 
 class Header extends Component {
 
-  constructor(props) {
-    super(props);
-    this.state = { media: 'all' };
-    this._search = this._search.bind(this);
-    this._onChange = this._onChange.bind(this);
-  }
+  state = {
+    media: 'all'
+  };
 
-  componentDidMount() {
+  componentDidMount = () => {
     const self = this;
-
     // initialize semantic UI dropdown
     $('.ui.dropdown').dropdown({
       onChange(value) {
@@ -26,24 +20,22 @@ class Header extends Component {
         self.state.query && emitter.emit('search', self.state);
       }
     });
-  }
+  };
 
-  componentWillUnmount() {
+  componentWillUnmount = () => {
     // reset dropdown
     $('.ui.dropdown').dropdown('refresh');
-  }
+  };
 
-  _search(e) {
+  _search = (e) => {
     // only trigger search while user type enter
     e.keyCode === 13 && emitter.emit('search', this.state);
-  }
+  };
 
-  _onChange(e) {
+  _onChange = (e) => {
     // set query state
-    this.setState({
-      query: e.target.value
-    });
-  }
+    this.setState({ query: e.target.value });
+  };
 
   render() {
     return (

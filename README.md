@@ -4,7 +4,7 @@
 [![David](https://img.shields.io/david/dev/LeoAJ/react-iTunes-search.svg?style=flat-square)](https://david-dm.org/LeoAJ/react-iTunes-search#info=devDependencies)
 [![npm](https://img.shields.io/npm/l/express.svg?style=flat-square)](https://github.com/LeoAJ/react-iTunes-search/blob/master/LICENSE)
 
-simple web app for iTunes search with React (v15.0.1)
+:musical_note: :mag: Simple web app for iTunes search with React  (v15.0.1)
 
 ## Preview
 

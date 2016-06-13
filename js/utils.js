@@ -1,6 +1,4 @@
-function capitalize(str) {
-  return str.substring(0, 1).toUpperCase() + str.substring(1).toLowerCase();
-}
+const capitalize = str => (`${str[0].toUpperCase()}${str.slice(1).toLowerCase()}`);
 
 export function getMedia(str) {
   if (str.indexOf(' ') === -1) {

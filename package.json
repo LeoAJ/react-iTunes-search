@@ -31,7 +31,7 @@
   "dependencies": {
     "classnames": "^2.2.3",
     "jquery": "^3.0.0",
-    "jss": "^3.6.3",
+    "jss": "^4.0.1",
     "moment": "^2.12.0",
     "react": "^15.0.1",
     "react-dom": "^15.0.1",

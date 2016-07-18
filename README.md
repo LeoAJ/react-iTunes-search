@@ -56,6 +56,7 @@ npm run lint
 * Babel 6
 * ES6
 * Webpack
+* PostCSS
 * Eslint 2.0
 * Semantic UI
 * iTunes search API

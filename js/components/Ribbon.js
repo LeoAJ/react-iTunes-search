@@ -3,7 +3,11 @@ import ribbon from '../../css/img/ribbon.png';
 import '../../css/ribbon.css';
 
 const Ribbon = () => (
-  <a target="_blank" href="https://github.com/LeoAJ/react-iTunes-search">
+  <a
+    target="_blank"
+    rel="noopener noreferrer"
+    href="https://github.com/LeoAJ/react-iTunes-search"
+  >
     <img
       alt="img"
       className="ribbon"

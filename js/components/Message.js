@@ -1,9 +1,9 @@
 import React, { PropTypes } from 'react';
-import classnames from 'classnames';
+import cx from 'classnames';
 
 const Message = ({ iconColor, icon, headerMsg, bodyMsg }) => (
-  <div className={classnames('ui', 'icon', 'message', iconColor)}>
-    <i className={classnames('icon', icon)}></i>
+  <div className={cx('ui', 'icon', 'message', iconColor)}>
+    <i className={cx('icon', icon)} />
     <div className="content">
       <div className="header">{headerMsg}</div>
       <p>{bodyMsg}</p>

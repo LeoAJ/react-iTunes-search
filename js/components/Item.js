@@ -17,7 +17,11 @@ const Item = ({
   description,
   releaseDate
 }) => (
-  <a className="ui card" href={trackViewUrl || collectionViewUrl} target="_blank">
+  <a
+    className="ui card"
+    href={trackViewUrl || collectionViewUrl}
+    target="_blank" rel="noopener noreferrer"
+  >
     <div className="image">
       <img alt="img" src={artworkUrl100.replace('100x100', '1200x1200')} />
     </div>
@@ -39,7 +43,7 @@ const Item = ({
       </span>
       {typeof trackPrice || collectionPrice || price === 'number' ?
         <span>
-          <i className="dollar icon"></i>
+          <i className="dollar icon" />
           {trackPrice || collectionPrice || price}
         </span> : null
       }

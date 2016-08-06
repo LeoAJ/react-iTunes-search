@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import emitter from '../emitter';
 import $ from 'jquery';
 import 'imports?$=jquery,jQuery=jquery!../vendor/transition';
 import 'imports?$=jquery,jQuery=jquery!../vendor/dropdown';
+import emitter from '../emitter';
 
 class Header extends Component {
 
@@ -41,7 +41,7 @@ class Header extends Component {
     return (
       <div className="ui inverted vertical segment center aligned">
         <div className="ui right action left icon input massive">
-          <i className="search icon"></i>
+          <i className="search icon" />
           <input
             type="text"
             onKeyDown={this._search}
@@ -51,7 +51,7 @@ class Header extends Component {
           />
           <div className="ui dropdown button">
             <div className="text">All</div>
-            <i className="dropdown icon"></i>
+            <i className="dropdown icon" />
             <div className="menu">
               <div className="item">All</div>
               <div className="item">Audiobook</div>

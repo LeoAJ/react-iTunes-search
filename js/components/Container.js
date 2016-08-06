@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
+import reqwest from 'reqwest';
 import List from './List';
 import Message from './Message';
 import emitter from '../emitter';
-import reqwest from 'reqwest';
 import { getMedia } from '../utils';
 
 class Container extends Component {

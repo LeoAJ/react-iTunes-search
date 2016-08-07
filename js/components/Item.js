@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import moment from 'moment';
+import fecha from 'fecha';
 import { getKind } from '../utils';
 
 const Item = ({
@@ -39,7 +39,7 @@ const Item = ({
     </div>
     <div className="extra content">
       <span className="right floated">
-        Release on {moment(releaseDate).format('MMM DD, YYYY')}
+        Release on {fecha.format(new Date(releaseDate), 'MMM D, YYYY')}
       </span>
       {typeof trackPrice || collectionPrice || price === 'number' ?
         <span>

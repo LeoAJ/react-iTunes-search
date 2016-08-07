@@ -30,9 +30,9 @@
   },
   "dependencies": {
     "classnames": "^2.2.3",
+    "fecha": "^2.2.0",
     "jquery": "^3.0.0",
     "jss": "^5.0.0",
-    "moment": "^2.12.0",
     "react": "^15.0.1",
     "react-dom": "^15.0.1",
     "reqwest": "^2.0.5",

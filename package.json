@@ -1,6 +1,6 @@
 {
   "name": "react-iTunes-search",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "description": "simple web app for iTunes Search implemented by React",
   "main": "js/app.js",
   "keywords": [

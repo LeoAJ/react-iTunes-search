@@ -6,35 +6,30 @@ import emitter from '../emitter';
 
 class Header extends Component {
 
-  state = {
-    media: 'all'
-  };
+  state = { media: 'all' };
 
-  componentDidMount = () => {
-    const self = this;
-    // initialize semantic UI dropdown
+  // initialize semantic UI dropdown
+  // only start search if there is a search query inside of input box
+  componentDidMount() {
     $('.ui.dropdown').dropdown({
-      onChange(value) {
-        self.setState({ media: value });
-        // only start search if there is a search query inside of input box
-        self.state.query && emitter.emit('search', self.state);
+      onChange: (media) => {
+        this.setState({ media });
+        this.state.query && this.emitSearch();
       }
     });
-  };
+  }
 
-  componentWillUnmount = () => {
-    // reset dropdown
+  // reset dropdown
+  componentWillUnmount() { // eslint-disable-line class-methods-use-this
     $('.ui.dropdown').dropdown('refresh');
-  };
+  }
 
-  _search = (e) => {
-    // only trigger search while user type enter
-    e.keyCode === 13 && emitter.emit('search', this.state);
-  };
+  emitSearch = () => emitter.emit('search', this.state);
 
-  _onChange = (e) => {
-    // set query state
+  // only trigger search while user type enter
+  _onKeyUp = e => {
     this.setState({ query: e.target.value });
+    e.keyCode === 13 && this.emitSearch();
   };
 
   render() {
@@ -44,8 +39,7 @@ class Header extends Component {
           <i className="search icon" />
           <input
             type="text"
-            onKeyDown={this._search}
-            onChange={this._onChange}
+            onKeyUp={this._onKeyUp}
             placeholder="Search..."
             autoFocus
           />

@@ -12,11 +12,10 @@ class Container extends Component {
   };
 
   componentDidMount = () => {
-    emitter.on('search', (state) => {
+    emitter.on('search', ({ media, query }) => {
       this.setState({ type: 'loading' });
-
       reqwest({
-        url: `https://itunes.apple.com/search?media=${getMedia(state.media || 'all')}&term=${state.query.split(' ').join('+')}`,
+        url: `https://itunes.apple.com/search?media=${getMedia(media || 'all')}&term=${query.split(' ').join('+')}`,
         type: 'jsonp'
       })
       .then(response => this.setState({ response, type: response.resultCount || 'noContent' }))

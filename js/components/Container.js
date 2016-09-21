@@ -7,11 +7,9 @@ import { getMedia } from '../utils';
 
 class Container extends Component {
 
-  state = {
-    type: 'start'
-  };
+  state = { type: 'start' };
 
-  componentDidMount = () => {
+  componentDidMount() {
     emitter.on('search', ({ media, query }) => {
       this.setState({ type: 'loading' });
       reqwest({
@@ -21,11 +19,11 @@ class Container extends Component {
       .then(response => this.setState({ response, type: response.resultCount || 'noContent' }))
       .fail(err => this.setState({ type: 'error' }));
     });
-  };
+  }
 
-  componentWillUnmount = () => {
+  componentWillUnmount() { // eslint-disable-line class-methods-use-this
     emitter.removeListener('search');
-  };
+  }
 
   mainRender = () => {
     const { type, response } = this.state;

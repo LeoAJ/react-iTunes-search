@@ -4,7 +4,9 @@
 [![David](https://img.shields.io/david/dev/LeoAJ/react-iTunes-search.svg?style=flat-square)](https://david-dm.org/LeoAJ/react-iTunes-search#info=devDependencies)
 [![npm](https://img.shields.io/npm/l/express.svg?style=flat-square)](https://github.com/LeoAJ/react-iTunes-search/blob/master/LICENSE)
 
-:musical_note: :mag: Simple web app for iTunes search with React  (v15.0.1)
+:musical_note: :mag: Simple web app for iTunes search with React  (v15)
+
+>If you like this one and you also like Redux, there is a Redux implementation version [here](https://github.com/LeoAJ/redux-iTunes-search). Please check it out.
 
 ## Preview
 
@@ -52,12 +54,12 @@ npm run lint
 
 ## Built with
 
-* React (v15.0.1)
+* React (v15)
 * Babel 6
 * ES6
 * Webpack
 * PostCSS
-* Eslint 2.0
+* Eslint
 * Semantic UI
 * iTunes search API
 

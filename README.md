@@ -26,6 +26,12 @@ To know more detail, please read my [post](http://leoj.js.org/personal/React-iTu
 2. `cd react-iTunes-search`
 3. `npm install`
 
+or use [yarn](https://yarnpkg.com)
+
+```
+yarn
+```
+
 ## Dev
 
 Run webpack dev server with [react-hot-loader](https://github.com/gaearon/react-hot-loader)

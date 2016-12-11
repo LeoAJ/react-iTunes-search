@@ -1,13 +1,20 @@
+// @flow
 import React, { Component } from 'react';
+// $FlowFixMe
 import reqwest from 'reqwest';
 import List from './List';
 import Message from './Message';
 import emitter from '../emitter';
 import { getMedia } from '../utils';
 
+type ContainerState = {
+  type: 'start' | 'loading' | 'noContent' | 'error',
+  response?: Object
+};
+
 class Container extends Component {
 
-  state = { type: 'start' };
+  state: ContainerState = { type: 'start' };
 
   componentDidMount() {
     emitter.on('search', ({ media, query }) => {

@@ -58,6 +58,12 @@ run eslint, using [eslint-config-airbnb](https://github.com/airbnb/javascript/tr
 npm run lint
 ```
 
+## Flow check
+
+```
+npm run flow
+```
+
 ## Built with
 
 * React (v15)
@@ -68,6 +74,7 @@ npm run lint
 * Eslint
 * Semantic UI
 * iTunes search API
+* Flow
 
 ## License
 

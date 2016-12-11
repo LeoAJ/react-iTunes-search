@@ -1,7 +1,18 @@
+// @flow
 import React, { PropTypes } from 'react';
 import cx from 'classnames';
 
-const Message = ({ iconColor, icon, headerMsg, bodyMsg }) => (
+const Message = ({
+  iconColor,
+  icon,
+  headerMsg,
+  bodyMsg
+}: {
+  iconColor: string,
+  icon: string,
+  headerMsg: string,
+  bodyMsg: string
+}) => (
   <div className={cx('ui', 'icon', 'message', iconColor)}>
     <i className={cx('icon', icon)} />
     <div className="content">
@@ -10,12 +21,5 @@ const Message = ({ iconColor, icon, headerMsg, bodyMsg }) => (
     </div>
   </div>
 );
-
-Message.propTypes = {
-  iconColor: PropTypes.string,
-  icon: PropTypes.string,
-  headerMsg: PropTypes.string,
-  bodyMsg: PropTypes.string
-};
 
 export default Message;

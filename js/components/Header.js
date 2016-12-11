@@ -1,12 +1,36 @@
+// @flow
 import React, { Component } from 'react';
+// $FlowFixMe
 import $ from 'jquery';
+// $FlowFixMe
 import 'imports?$=jquery,jQuery=jquery!../vendor/transition';
+// $FlowFixMe
 import 'imports?$=jquery,jQuery=jquery!../vendor/dropdown';
 import emitter from '../emitter';
 
+type HeaderState = {
+  media: string,
+  query?: string
+};
+
 class Header extends Component {
 
-  state = { media: 'all' };
+  emitSearch: () => void;
+  _onKeyUp: (e: SyntheticInputEvent & KeyboardEvent) => void; // eslint-disable-line no-undef
+
+  state: HeaderState = {
+    media: 'all'
+  };
+
+  constructor(props: Object) {
+    super(props);
+    this.emitSearch = () => emitter.emit('search', this.state);
+    // only trigger search while user type enter
+    this._onKeyUp = e => {
+      this.setState({ query: e.target.value });
+      e.keyCode === 13 && this.emitSearch();
+    };
+  }
 
   // initialize semantic UI dropdown
   // only start search if there is a search query inside of input box
@@ -23,14 +47,6 @@ class Header extends Component {
   componentWillUnmount() { // eslint-disable-line class-methods-use-this
     $('.ui.dropdown').dropdown('refresh');
   }
-
-  emitSearch = () => emitter.emit('search', this.state);
-
-  // only trigger search while user type enter
-  _onKeyUp = e => {
-    this.setState({ query: e.target.value });
-    e.keyCode === 13 && this.emitSearch();
-  };
 
   render() {
     return (

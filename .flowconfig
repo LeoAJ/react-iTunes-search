@@ -1,0 +1,14 @@
+[ignore]
+.*/dist/.*
+.*/css/.*
+.*/webpack/.*
+.*/node_modules/reqwest.*
+
+[include]
+
+[libs]
+
+[options]
+esproposal.class_static_fields=enable
+esproposal.class_instance_fields=enable
+suppress_comment= \\(.\\|\n\\)*\\$FlowFixMe

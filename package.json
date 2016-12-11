@@ -21,6 +21,7 @@
   "author": "Leo Hsieh <leo0924@gmail.com> (http://leoj.js.org)",
   "license": "MIT",
   "scripts": {
+    "test": "npm run lint && npm run flow",
     "flow": "flow",
     "clean": "rimraf dist/",
     "build": "webpack -p --config ./webpack/webpack.config.babel.js --progress --colors --define process.env.NODE_ENV='\"production\"'",

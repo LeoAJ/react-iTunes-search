@@ -1,11 +1,10 @@
 // @flow
 import React, { Component } from 'react';
 import $ from 'jquery';
-// $FlowFixMe
-import 'imports?$=jquery,jQuery=jquery!../vendor/transition';
-// $FlowFixMe
-import 'imports?$=jquery,jQuery=jquery!../vendor/dropdown';
 import emitter from '../emitter';
+
+$.fn.transition = require('semantic-ui-transition');
+$.fn.dropdown = require('semantic-ui-dropdown');
 
 type HeaderState = {
   media: string,

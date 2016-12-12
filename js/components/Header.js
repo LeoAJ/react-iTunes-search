@@ -1,6 +1,5 @@
 // @flow
 import React, { Component } from 'react';
-// $FlowFixMe
 import $ from 'jquery';
 // $FlowFixMe
 import 'imports?$=jquery,jQuery=jquery!../vendor/transition';

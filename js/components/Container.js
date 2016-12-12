@@ -1,6 +1,5 @@
 // @flow
 import React, { Component } from 'react';
-// $FlowFixMe
 import reqwest from 'reqwest';
 import List from './List';
 import Message from './Message';

@@ -61,6 +61,7 @@ npm run lint
 ## Flow check
 
 ```
+flow-typed install
 npm run flow
 ```
 

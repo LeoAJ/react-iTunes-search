@@ -2,7 +2,7 @@
 .*/dist/.*
 .*/css/.*
 .*/webpack/.*
-.*/node_modules/reqwest.*
+.*/node_modules/.*
 
 [include]
 

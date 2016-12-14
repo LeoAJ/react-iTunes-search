@@ -1876,9 +1876,9 @@ flatten@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/flatten/-/flatten-1.0.2.tgz#dae46a9d78fbe25292258cc1e780a41d95c03782"
 
-flow-bin@^0.36.0:
-  version "0.36.0"
-  resolved "https://registry.yarnpkg.com/flow-bin/-/flow-bin-0.36.0.tgz#557907bd9c2ab0670cfad9e7e906a74b0631e39a"
+flow-bin@^0.37.0:
+  version "0.37.0"
+  resolved "https://registry.yarnpkg.com/flow-bin/-/flow-bin-0.37.0.tgz#456ebbd472d20d2d970560cea0a6b3c648878307"
 
 flow-typed@^2.0.0:
   version "2.0.0"
@@ -2171,12 +2171,12 @@ ignore@^3.2.0:
   version "3.2.0"
   resolved "https://registry.yarnpkg.com/ignore/-/ignore-3.2.0.tgz#8d88f03c3002a0ac52114db25d2c673b0bf1e435"
 
-imports-loader@^0.6.5:
-  version "0.6.5"
-  resolved "https://registry.yarnpkg.com/imports-loader/-/imports-loader-0.6.5.tgz#ae74653031d59e37b3c2fb2544ac61aeae3530a6"
+imports-loader@^0.7.0:
+  version "0.7.0"
+  resolved "https://registry.yarnpkg.com/imports-loader/-/imports-loader-0.7.0.tgz#468c04de8075941cfab28146c755c24cc1f36ccd"
   dependencies:
-    loader-utils "0.2.x"
-    source-map "0.1.x"
+    loader-utils "^0.2.16"
+    source-map "^0.5.6"
 
 imurmurhash@^0.1.4:
   version "0.1.4"
@@ -3760,12 +3760,6 @@ source-map-support@^0.4.2:
   resolved "https://registry.yarnpkg.com/source-map-support/-/source-map-support-0.4.6.tgz#32552aa64b458392a85eab3b0b5ee61527167aeb"
   dependencies:
     source-map "^0.5.3"
-
-source-map@0.1.x:
-  version "0.1.43"
-  resolved "https://registry.yarnpkg.com/source-map/-/source-map-0.1.43.tgz#c24bc146ca517c1471f5dacbe2571b2b7f9e3346"
-  dependencies:
-    amdefine ">=0.0.4"
 
 source-map@^0.4.4, source-map@~0.4.1:
   version "0.4.4"

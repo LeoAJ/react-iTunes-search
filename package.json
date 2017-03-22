@@ -16,7 +16,7 @@
     "url": "git@github.com:LeoAJ/react-facebook-friends.git"
   },
   "engines": {
-    "node": ">=4"
+    "node": ">=5"
   },
   "author": "Leo Hsieh <leo0924@gmail.com> (http://leoj.js.org)",
   "license": "MIT",

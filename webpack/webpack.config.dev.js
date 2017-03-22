@@ -20,8 +20,8 @@ module.exports = Object.assign({}, webpackConfig, {
     './js'
   ],
   output: {
-    publicPath: '/',
-    path: path.resolve(__dirname, 'dist/'),
+    publicPath: '/dist/',
+    path: path.resolve(__dirname, '../', 'dist/'),
     filename: 'bundle.js'
   },
   plugins: [
@@ -32,7 +32,6 @@ module.exports = Object.assign({}, webpackConfig, {
     port: 3000,
     hot: true,
     compress: false,
-    contentBase: path.resolve(__dirname, 'dist/'),
     historyApiFallback: true,
     stats: {
       colors: true,

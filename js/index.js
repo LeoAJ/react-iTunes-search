@@ -1,5 +1,6 @@
-import React from 'react';
 import { render } from 'react-dom';
+import { AppContainer } from 'react-hot-loader';
+import React from 'react';
 import App from './components/App';
 
 // import semantic UI
@@ -18,7 +19,15 @@ import '../css/semantic-ui/segment.min.css';
 import '../css/semantic-ui/site.min.css';
 import '../css/semantic-ui/transition.min.css';
 
-render(
-  <App />,
+const renderApp = Comp => render(
+  <AppContainer>
+    <Comp />
+  </AppContainer>,
   document.querySelector('#itunes-search')
 );
+
+renderApp(App);
+
+if (module.hot) {
+  module.hot.accept('./components/App', _ => renderApp(App));
+}

@@ -1,19 +1,20 @@
-import path from 'path';
-import webpack from 'webpack';
-import webpackConfig from './base';
+const path = require('path');
+const webpack = require('webpack');
+const webpackConfig = require('./base');
 
-webpackConfig.module.loaders = [
-  {
-    test: /\.js$/,
-    loaders: ['react-hot', 'babel'],
-    exclude: /node_modules/
-  },
-  ...webpackConfig.module.loaders
-];
+webpackConfig.module.rules.push({
+  test: /\.js$/,
+  exclude: /node_modules/,
+  use: [
+    'react-hot-loader/webpack',
+    'babel-loader'
+  ]
+});
 
-export default Object.assign({}, webpackConfig, {
+module.exports = Object.assign({}, webpackConfig, {
   devtool: 'cheap-module-eval-source-map',
   entry: [
+    'react-hot-loader/patch',
     'webpack-dev-server/client?http://localhost:3000',
     'webpack/hot/only-dev-server',
     './js'
@@ -25,6 +26,18 @@ export default Object.assign({}, webpackConfig, {
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoErrorsPlugin()
-  ]
+    new webpack.NamedModulesPlugin()
+  ],
+  devServer: {
+    port: 3000,
+    hot: true,
+    compress: false,
+    historyApiFallback: true,
+    stats: {
+      colors: true,
+      timings: true,
+      version: true,
+      warnings: true
+    }
+  }
 });

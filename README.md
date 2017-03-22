@@ -34,7 +34,7 @@ yarn
 
 ## Dev
 
-Run webpack dev server with [react-hot-loader](https://github.com/gaearon/react-hot-loader)
+Run webpack dev server with [react-hot-loader 3](https://github.com/gaearon/react-hot-loader)
 
 ```
 npm start
@@ -70,7 +70,8 @@ npm run flow
 * React (v15)
 * Babel 6
 * ES6
-* Webpack
+* Webpack 2
+* React-hot-loader 3
 * PostCSS
 * Eslint
 * Semantic UI

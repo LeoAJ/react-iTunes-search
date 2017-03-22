@@ -1,20 +1,32 @@
-import autoprefixer from 'autoprefixer';
+const autoprefixer = require('autoprefixer');
 
-export default {
-  postcss: [autoprefixer({ browsers: ['last 2 versions'] })],
+module.exports = {
   module: {
-    loaders: [{
+    rules: [{
       test: /\.css$/,
-      loader: 'style!css!postcss',
-      exclude: /node_modules/
+      exclude: /node_modules/,
+      use: [
+        'style-loader',
+        'css-loader',
+        {
+          loader: 'postcss-loader',
+          options: {
+            plugins: _ => [autoprefixer({ browsers: ['last 2 versions'] })]
+          }
+        }
+      ]
     }, {
       test: /\.(woff|woff2|ttf|svg)$/,
-      loader: 'url?limit=100000',
-      exclude: /node_modules/
+      exclude: /node_modules/,
+      use: [
+        'url-loader?limit=100000'
+      ],
     }, {
       test: /\.(eot|png)$/,
-      loader: 'file',
-      exclude: /node_modules/
+      exclude: /node_modules/,
+      use: [
+        'file-loader'
+      ]
     }]
   }
 };

@@ -1,18 +1,18 @@
-import path from 'path';
-import webpack from 'webpack';
-import webpackConfig from './base';
+// import path from 'path';
+// import webpack from 'webpack';
+// import webpackConfig from './base';
 
-webpackConfig.module.loaders = [
-  {
-    test: /\.js$/,
-    loader: 'babel',
-    query: { compact: false },
-    exclude: /node_modules/
-  },
-  ...webpackConfig.module.loaders
-];
+const path = require('path');
+const webpack = require('webpack');
+const webpackConfig = require('./base');
 
-export default Object.assign({}, webpackConfig, {
+webpackConfig.module.rules.push({
+  test: /\.js$/,
+  exclude: /node_modules/,
+  use: ['babel-loader']
+});
+
+module.exports = Object.assign({}, webpackConfig, {
   devtool: 'source-map',
   entry: './js',
   output: {
@@ -24,7 +24,6 @@ export default Object.assign({}, webpackConfig, {
       output: {
         comments: false
       },
-      minimize: true,
       compress: {
         warnings: false
       }

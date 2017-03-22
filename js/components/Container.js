@@ -31,7 +31,7 @@ class Container extends Component {
     emitter.removeListener('search');
   }
 
-  mainRender = _ => {
+  mainRender = () => {
     const { type, response } = this.state;
     const msgMap = {
       start: {

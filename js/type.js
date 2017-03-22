@@ -2,6 +2,7 @@
 /* eslint import/prefer-default-export: 0 */
 
 export type SearchResult = {
+  trackId: number,
   trackPrice?: number,
   collectionPrice?: number,
   price?: number,

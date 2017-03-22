@@ -1,7 +1,7 @@
-import React from 'react';
 import { render } from 'react-dom';
-import App from './components/App';
 import { AppContainer } from 'react-hot-loader';
+import React from 'react';
+import App from './components/App';
 
 // import semantic UI
 import '../css/semantic-ui/button.min.css';

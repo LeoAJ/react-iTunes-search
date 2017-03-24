@@ -4,9 +4,12 @@ import reqwest from 'reqwest';
 import List from './List';
 import Message from './Message';
 import emitter from '../emitter';
-import { getMedia } from '../utils';
+import { getApiUrl } from '../utils';
+import type { HeaderState, ContainerState } from '../type';
 
-const msgMap = {
+const REQWEST_TYPE: string = 'jsonp';
+
+const msgMap: Object = {
   start: {
     headerMsg: 'Welcome back!',
     iconColor: 'black',
@@ -33,29 +36,21 @@ const msgMap = {
   }
 };
 
-type ContainerState = {
-  type: 'start' | 'loading' | 'noContent' | 'error',
-  response?: Object
-};
-
 class Container extends Component {
 
   state: ContainerState = { type: 'start' };
 
-  async getSearchResult({
-    media,
-    query
-  }: {
-    media: string,
-    query: string
-  }) {
+  async getSearchResult(headerState: HeaderState) {
     try {
       this.setState({ type: 'loading' });
       const response = await reqwest({
-        url: `https://itunes.apple.com/search?media=${getMedia(media || 'all')}&term=${query.split(' ').join('+')}`,
-        type: 'jsonp'
+        url: getApiUrl(headerState),
+        type: REQWEST_TYPE
       });
-      this.setState({ response, type: response.resultCount || 'noContent' });
+      this.setState({
+        response,
+        type: response.resultCount || 'noContent'
+      });
     } catch (e) {
       this.setState({ type: 'error' });
     }

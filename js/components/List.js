@@ -11,7 +11,7 @@ const List = ({
   resultCount: number
 }) => (
   <div className="ui link cards">
-    {resultCount > 0 ? results.map((item, index) => <Item key={item.trackId} {...item} />) : null}
+    {resultCount > 0 ? results.map((item, i) => <Item key={item.trackId || i} {...item} />) : null}
   </div>
 );
 

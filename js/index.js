@@ -1,3 +1,4 @@
+import 'babel-polyfill';
 import { render } from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
 import React from 'react';

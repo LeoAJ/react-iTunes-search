@@ -69,7 +69,7 @@ npm run flow
 
 * React (v15)
 * Babel 6
-* ES6
+* ES6/ES7 (async/await)
 * Webpack 2
 * React-hot-loader 3
 * PostCSS

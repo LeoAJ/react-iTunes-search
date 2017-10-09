@@ -27,9 +27,10 @@ const Item = (props: SearchResult) => (
       </div>
     </div>
     <div className="extra content">
-      {props.releaseDate && <span className="right floated">
-        Release on {fecha.format(new Date(props.releaseDate), 'MMM D, YYYY')}
-      </span>}
+      {props.releaseDate &&
+        <span className="right floated">
+          Release on {fecha.format(new Date(props.releaseDate), 'MMM D, YYYY')}
+        </span>}
       {(typeof props.trackPrice || props.collectionPrice || props.price === 'number') &&
         <span>
           <i className="dollar icon" />

@@ -15,6 +15,7 @@ extends:
   - airbnb
 
 rules:
+  react/no-unused-state: 0
   react/sort-comp: 0
   import/extensions: 0
   import/no-extraneous-dependencies: 0

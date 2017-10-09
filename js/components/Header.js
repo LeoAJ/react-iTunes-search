@@ -1,5 +1,5 @@
 // @flow
-import React, { Component } from 'react';
+import React from 'react';
 import $ from 'jquery';
 import emitter from '../emitter';
 import type { HeaderState } from '../type';
@@ -7,10 +7,12 @@ import type { HeaderState } from '../type';
 $.fn.transition = require('semantic-ui-transition');
 $.fn.dropdown = require('semantic-ui-dropdown');
 
-class Header extends Component {
+type Props = {};
+type State = HeaderState;
 
+class Header extends React.PureComponent<Props, State> {
   emitSearch: () => void;
-  _onKeyUp: (e: SyntheticInputEvent & KeyboardEvent) => void; // eslint-disable-line no-undef
+  _onKeyUp: (e: Object) => void; // eslint-disable-line no-undef
 
   state: HeaderState = {
     media: 'all',
@@ -53,7 +55,6 @@ class Header extends Component {
             type="text"
             onKeyUp={this._onKeyUp}
             placeholder="Search..."
-            autoFocus
           />
           <div className="ui dropdown button">
             <div className="text">All</div>

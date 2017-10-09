@@ -8,7 +8,8 @@ const Item = (props: SearchResult) => (
   <a
     className="ui card"
     href={props.trackViewUrl || props.collectionViewUrl}
-    target="_blank" rel="noopener noreferrer"
+    target="_blank"
+    rel="noopener noreferrer"
   >
     <div className="image">
       <img alt="img" src={props.artworkUrl100.replace('100x100', '1200x1200')} />

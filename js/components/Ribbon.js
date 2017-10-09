@@ -12,9 +12,9 @@ const Ribbon = () => (
       alt="img"
       className="ribbon"
       src={
-      ribbon.indexOf('dist') === -1
-        ? `dist/${ribbon}`
-        : ribbon.substring(1)
+        ribbon.indexOf('dist') === -1
+          ? `dist/${ribbon}`
+          : ribbon.substring(1)
       }
     />
   </a>

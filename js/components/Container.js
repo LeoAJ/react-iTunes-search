@@ -1,5 +1,5 @@
 // @flow
-import React, { Component } from 'react';
+import React from 'react';
 import reqwest from 'reqwest';
 import List from './List';
 import Message from './Message';
@@ -36,8 +36,10 @@ const msgMap: Object = {
   }
 };
 
-class Container extends Component {
+type Props = {};
+type State = ContainerState;
 
+class Container extends React.PureComponent<Props, State> {
   state: ContainerState = { type: 'start' };
 
   async getSearchResult(headerState: HeaderState) {

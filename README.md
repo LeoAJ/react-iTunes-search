@@ -67,7 +67,7 @@ npm run flow
 
 ## Built with
 
-* React (v15)
+* React (v16)
 * Babel 6
 * ES6/ES7 (async/await)
 * Webpack 2

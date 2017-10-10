@@ -36,10 +36,9 @@ const msgMap: Object = {
   }
 };
 
-type Props = {};
 type State = ContainerState;
 
-class Container extends React.PureComponent<Props, State> {
+class Container extends React.PureComponent<{}, State> {
   state: ContainerState = { type: 'start' };
 
   async getSearchResult(headerState: HeaderState) {

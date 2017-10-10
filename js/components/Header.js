@@ -7,10 +7,9 @@ import type { HeaderState } from '../type';
 $.fn.transition = require('semantic-ui-transition');
 $.fn.dropdown = require('semantic-ui-dropdown');
 
-type Props = {};
 type State = HeaderState;
 
-class Header extends React.PureComponent<Props, State> {
+class Header extends React.PureComponent<{}, State> {
   emitSearch: () => void;
   _onKeyUp: (e: Object) => void; // eslint-disable-line no-undef
 

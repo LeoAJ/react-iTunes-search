@@ -1,13 +1,13 @@
 // @flow
-/* eslint import/prefer-default-export: 0 */
-
 export type ContainerState = {
-  type: 'start' | 'loading' | 'noContent' | 'error',
-  response?: Object
+  status: 'init' | 'loading' | 'noContent' | 'error' | '',
+  data?: Object
 };
 
+export type SearchOption = 'All' | 'Audiobook' | 'eBook' | 'Movie' | 'Music' | 'Music Video' | 'Podcast' | 'TV Show' | 'Short Film' | 'Software';
+
 export type HeaderState = {
-  media: string,
+  media: SearchOption,
   query: string
 };
 

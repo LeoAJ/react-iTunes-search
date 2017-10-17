@@ -2,7 +2,6 @@
   "name": "react-iTunes-search",
   "version": "1.8.3",
   "description": "simple web app for iTunes Search implemented by React",
-  "main": "js/app.js",
   "keywords": [
     "react",
     "iTunes",
@@ -15,9 +14,6 @@
     "type": "git",
     "url": "git@github.com:LeoAJ/react-facebook-friends.git"
   },
-  "engines": {
-    "node": ">=5"
-  },
   "author": "Leo Hsieh <leo0924@gmail.com> (http://leoj.js.org)",
   "license": "MIT",
   "scripts": {
@@ -27,20 +23,15 @@
     "build": "webpack --config ./webpack/webpack.config.babel.js --progress --colors --define process.env.NODE_ENV='\"production\"'",
     "dev": "webpack-dev-server --config ./webpack/webpack.config.dev.js",
     "deploy": "npm run clean && npm run build",
-    "lint": "eslint js/** webpack/**",
+    "lint": "eslint src/** webpack/**",
     "start": "npm run dev"
   },
   "dependencies": {
     "classnames": "^2.2.3",
     "fecha": "^2.2.0",
-    "jquery": "^3.0.0",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
-    "react-hot-loader": "^3.0.0-beta.6",
-    "reqwest": "^2.0.5",
-    "semantic-ui-dropdown": "^2.2.3",
-    "semantic-ui-transition": "^2.2.3",
-    "xhr2": "^0.1.3"
+    "react-hot-loader": "^3.0.0-beta.6"
   },
   "devDependencies": {
     "autoprefixer": "^7.0.1",
@@ -58,7 +49,7 @@
     "eslint-plugin-jsx-a11y": "^6.0.2",
     "eslint-plugin-react": "^7.4.0",
     "file-loader": "^1.1.4",
-    "flow-bin": "^0.56.0",
+    "flow-bin": "^0.57.3",
     "flow-typed": "^2.2.0",
     "imports-loader": "^0.7.0",
     "postcss-loader": "^2.0.3",

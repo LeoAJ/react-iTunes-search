@@ -1,0 +1,7 @@
+.list-wrapper {
+  padding: 10px 45px;
+  /* column width */
+	column-width: 300px;
+	/* space between columns */
+  column-gap: 2px;
+}

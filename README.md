@@ -24,20 +24,14 @@ To know more detail, please read my [post](http://leoj.js.org/personal/React-iTu
 
 1. `git clone git@github.com:LeoAJ/react-iTunes-search.git`
 2. `cd react-iTunes-search`
-3. `npm install`
-
-or use [yarn](https://yarnpkg.com)
-
-```
-yarn
-```
+3. `yarn`
 
 ## Dev
 
 Run webpack dev server with [react-hot-loader 3](https://github.com/gaearon/react-hot-loader)
 
 ```
-npm start
+yarn start
 ```
 
 and go to `localhost:3000`
@@ -47,7 +41,7 @@ and go to `localhost:3000`
 Use webpack minify plugin
 
 ```
-npm run deploy
+yarn deploy
 ```
 
 ## Lint
@@ -55,14 +49,22 @@ npm run deploy
 run eslint, using [eslint-config-airbnb](https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb) rules.
 
 ```
-npm run lint
+yarn lint
 ```
 
-## Flow check
+## Flow
 
 ```
 flow-typed install
-npm run flow
+yarn flow
+```
+
+### Test
+
+run both `lint` and `flow`
+
+```
+yarn test
 ```
 
 ## Built with
@@ -70,11 +72,11 @@ npm run flow
 * React (v16)
 * Babel 6
 * ES6/ES7 (async/await)
-* Webpack 2
+* Webpack
 * React-hot-loader 3
 * PostCSS
 * Eslint
-* Semantic UI
+* Materialize
 * iTunes search API
 * Flow
 

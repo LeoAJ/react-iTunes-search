@@ -15,6 +15,8 @@ extends:
   - airbnb
 
 rules:
+  react/jsx-wrap-multilines: 0
+  object-curly-newline: 0
   react/no-unused-state: 0
   react/sort-comp: 0
   import/extensions: 0

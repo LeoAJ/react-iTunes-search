@@ -1,6 +1,5 @@
 [ignore]
 .*/dist/.*
-.*/css/.*
 .*/webpack/.*
 .*/node_modules/.*
 

@@ -14,7 +14,7 @@ webpackConfig.module.rules.push({
 
 module.exports = Object.assign({}, webpackConfig, {
   devtool: 'source-map',
-  entry: './js',
+  entry: './src',
   output: {
     path: path.resolve(__dirname, '../', 'dist/'),
     filename: 'bundle.js'

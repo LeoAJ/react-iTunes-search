@@ -2,6 +2,7 @@
 import React, { PropTypes } from 'react';
 import Item from './Item';
 import type { SearchResult } from '../type';
+import '../style/List.css';
 
 const List = ({
   results,
@@ -10,7 +11,7 @@ const List = ({
   results: Array<SearchResult>,
   resultCount: number
 }) => (
-  <div className="ui link cards">
+  <div className="list-wrapper">
     {resultCount > 0 ? results.map((item, i) => <Item key={item.trackId || i} {...item} />) : null}
   </div>
 );

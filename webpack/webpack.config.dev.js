@@ -18,7 +18,7 @@ module.exports = Object.assign({}, webpackConfig, {
     'react-hot-loader/patch',
     'webpack-dev-server/client?http://localhost:3000',
     'webpack/hot/only-dev-server',
-    './js'
+    './src'
   ],
   output: {
     publicPath: '/dist/',

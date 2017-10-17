@@ -1,0 +1,11 @@
+.card-wrapper {
+  display: inline-block;
+	width: 300px;
+}
+
+.kind {
+  padding: 2px 4px;
+  font-weight: 300;
+  font-size: 0.8em;
+  border-radius: 2px;
+}

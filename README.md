@@ -10,7 +10,7 @@
 
 ## Preview
 
-![Preview Gif](https://raw.githubusercontent.com/LeoAJ/react-iTunes-search/gif/react-iTunes-search.gif)
+![Preview Gif](https://user-images.githubusercontent.com/492921/31646805-f68ca096-b2b8-11e7-988d-ecfe934debff.gif)
 
 ## Live Demo
 

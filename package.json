@@ -17,14 +17,14 @@
   "author": "Leo Hsieh <leo0924@gmail.com> (http://leoj.js.org)",
   "license": "MIT",
   "scripts": {
-    "test": "npm run lint && npm run flow",
+    "test": "yarn lint && yarn flow",
     "flow": "flow",
     "clean": "rimraf dist/",
     "build": "webpack --config ./webpack/webpack.config.babel.js --progress --colors --define process.env.NODE_ENV='\"production\"'",
     "dev": "webpack-dev-server --config ./webpack/webpack.config.dev.js",
-    "deploy": "npm run clean && npm run build",
+    "deploy": "yarn clean && yarn build",
     "lint": "eslint src/** webpack/**",
-    "start": "npm run dev"
+    "start": "yarn dev"
   },
   "dependencies": {
     "classnames": "^2.2.3",

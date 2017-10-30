@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Item /> Item component should renders correctly 1`] = `
+<div
+  className="card-wrapper"
+>
+  <div
+    className="card"
+  >
+    <div
+      className="card-image waves-effect waves-block waves-light"
+    >
+      <img
+        alt="img"
+        className="activator"
+        src="/1200x1200/"
+      />
+    </div>
+    <div
+      className="card-content"
+    >
+      <span
+        className="card-title activator grey-text text-darken-4"
+      >
+        <i
+          className="material-icons right"
+        >
+          more_vert
+        </i>
+      </span>
+      <p>
+        <a
+          target="_blank"
+        >
+          more
+        </a>
+      </p>
+    </div>
+    <div
+      className="card-reveal"
+    >
+      <span
+        className="card-title grey-text text-darken-4"
+      >
+        <i
+          className="material-icons right"
+        >
+          close
+        </i>
+      </span>
+      <p>
+        No description.
+      </p>
+    </div>
+  </div>
+</div>
+`;

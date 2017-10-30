@@ -22,8 +22,6 @@ export type SearchResult = {
   trackName?: string,
   collectionName?: string,
   kind: string,
-  artistName: string,
   longDescription?: string,
-  description?: string,
-  releaseDate?: string
+  description?: string
 };

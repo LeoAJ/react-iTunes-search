@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Container /> error state 1`] = `
+<div>
+  <Message
+    status="error"
+  />
+</div>
+`;
+
+exports[`<Container /> init state 1`] = `
+<div>
+  <Message
+    status="init"
+  />
+</div>
+`;
+
+exports[`<Container /> loading state 1`] = `
+<div>
+  <Message
+    status="loading"
+  />
+</div>
+`;
+
+exports[`<Container /> no search results state 1`] = `
+<div>
+  <Message
+    status="noContent"
+  />
+</div>
+`;
+
+exports[`<Container /> show data 1`] = `
+<div>
+  <List
+    resultCount={2}
+    results={
+      Array [
+        Object {
+          "trackName": "test1",
+        },
+        Object {
+          "trackName": "test2",
+        },
+      ]
+    }
+  />
+</div>
+`;

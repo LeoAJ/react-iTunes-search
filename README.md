@@ -59,9 +59,17 @@ flow-typed install
 yarn flow
 ```
 
+## Unit test
+
+Use `Jest`
+
+```
+yarn jest
+```
+
 ### Test
 
-run both `lint` and `flow`
+run both `lint`, `flow` and `jest`
 
 ```
 yarn test
@@ -79,6 +87,8 @@ yarn test
 * Materialize
 * iTunes search API
 * Flow
+* Jest
+* Enzyme
 
 ## License
 

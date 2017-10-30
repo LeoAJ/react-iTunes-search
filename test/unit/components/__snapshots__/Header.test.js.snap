@@ -1,0 +1,153 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Header /> Header component should renders correctly 1`] = `
+<div
+  className="navbar-fixed"
+>
+  <nav>
+    <div
+      className="nav-wrapper cyan"
+    >
+      <div
+        className="header-search-wrapper"
+      >
+        <i
+          className="material-icons black-text"
+        >
+          search
+        </i>
+        <input
+          className="search-input white black-text"
+          onKeyUp={[Function]}
+          placeholder="Search"
+          type="text"
+        />
+      </div>
+      <div
+        className="dropdown-wrapper"
+      >
+        <div
+          className="dropdown-button"
+          data-activates="search-options"
+          role="button"
+        >
+          All
+        </div>
+        <ul
+          className="dropdown-content"
+          id="search-options"
+        >
+          <li
+            className="select"
+            key="All"
+          >
+            <a
+              onClick={[Function]}
+              role="button"
+              tabIndex="0"
+            >
+              All
+            </a>
+          </li>
+          <li
+            className=""
+            key="Audiobook"
+          >
+            <a
+              onClick={[Function]}
+              role="button"
+              tabIndex="0"
+            >
+              Audiobook
+            </a>
+          </li>
+          <li
+            className=""
+            key="eBook"
+          >
+            <a
+              onClick={[Function]}
+              role="button"
+              tabIndex="0"
+            >
+              eBook
+            </a>
+          </li>
+          <li
+            className=""
+            key="Movie"
+          >
+            <a
+              onClick={[Function]}
+              role="button"
+              tabIndex="0"
+            >
+              Movie
+            </a>
+          </li>
+          <li
+            className=""
+            key="Music"
+          >
+            <a
+              onClick={[Function]}
+              role="button"
+              tabIndex="0"
+            >
+              Music
+            </a>
+          </li>
+          <li
+            className=""
+            key="Music Video"
+          >
+            <a
+              onClick={[Function]}
+              role="button"
+              tabIndex="0"
+            >
+              Music Video
+            </a>
+          </li>
+          <li
+            className=""
+            key="Podcast"
+          >
+            <a
+              onClick={[Function]}
+              role="button"
+              tabIndex="0"
+            >
+              Podcast
+            </a>
+          </li>
+          <li
+            className=""
+            key="TV Show"
+          >
+            <a
+              onClick={[Function]}
+              role="button"
+              tabIndex="0"
+            >
+              TV Show
+            </a>
+          </li>
+          <li
+            className=""
+            key="Software"
+          >
+            <a
+              onClick={[Function]}
+              role="button"
+              tabIndex="0"
+            >
+              Software
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</div>
+`;

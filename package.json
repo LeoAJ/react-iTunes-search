@@ -29,6 +29,8 @@
     "start": "yarn dev"
   },
   "dependencies": {
+    "autoprefixer": "^7.1.6",
+    "babel-polyfill": "^6.26.0",
     "classnames": "^2.2.3",
     "fecha": "^2.2.0",
     "react": "^16.0.0",
@@ -36,12 +38,10 @@
     "react-hot-loader": "^3.0.0-beta.6"
   },
   "devDependencies": {
-    "autoprefixer": "^7.0.1",
     "babel-core": "^6.7.2",
     "babel-eslint": "^8.0.1",
     "babel-jest": "^21.2.0",
     "babel-loader": "^7.0.0",
-    "babel-polyfill": "^6.23.0",
     "babel-preset-env": "^1.6.0",
     "babel-preset-react": "^6.5.0",
     "babel-preset-stage-0": "^6.5.0",
@@ -56,7 +56,6 @@
     "eslint-plugin-react": "^7.4.0",
     "file-loader": "^1.1.4",
     "flow-bin": "^0.57.3",
-    "flow-typed": "^2.2.0",
     "identity-obj-proxy": "^3.0.0",
     "imports-loader": "^0.7.0",
     "jest": "^21.2.1",

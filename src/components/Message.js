@@ -1,6 +1,5 @@
 // @flow
 import React, { PropTypes } from 'react';
-import cx from 'classnames';
 import '../style/Message.css';
 
 const msgMap: Object = {

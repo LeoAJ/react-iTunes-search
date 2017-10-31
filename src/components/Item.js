@@ -1,6 +1,5 @@
 // @flow
 import React, { PropTypes } from 'react';
-import fecha from 'fecha';
 import { getKind, kindColorMap } from '../utils';
 import type { SearchResult } from '../type';
 import '../style/Item.css';

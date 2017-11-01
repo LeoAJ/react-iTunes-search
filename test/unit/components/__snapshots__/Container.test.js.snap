@@ -8,6 +8,24 @@ exports[`<Container /> error state 1`] = `
 </div>
 `;
 
+exports[`<Container /> getSearchResult should fetch data 1`] = `
+Object {
+  "data": Object {
+    "resultCount": 1,
+    "results": Array [
+      Object {
+        "artworkUrl100": "",
+        "description": "",
+        "trackId": "1",
+        "trackName": "",
+        "trackPrice": 0.99,
+      },
+    ],
+  },
+  "status": "",
+}
+`;
+
 exports[`<Container /> init state 1`] = `
 <div>
   <Message
@@ -30,6 +48,13 @@ exports[`<Container /> no search results state 1`] = `
     status="noContent"
   />
 </div>
+`;
+
+exports[`<Container /> should set error state if there is a fetch error 1`] = `
+Object {
+  "data": Object {},
+  "status": "error",
+}
 `;
 
 exports[`<Container /> show data 1`] = `

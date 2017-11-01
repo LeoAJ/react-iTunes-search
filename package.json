@@ -17,8 +17,10 @@
   "author": "Leo Hsieh <leo0924@gmail.com> (http://leoj.js.org)",
   "license": "MIT",
   "scripts": {
+    "coverage": "jest --coverage",
+    "jest:watch": "jest --watch",
     "test": "yarn lint && yarn flow && yarn jest",
-    "jest:update": "jest --updateSnapshot test/unit",
+    "jest:update": "jest --u test/unit",
     "jest": "jest test/unit",
     "flow": "flow",
     "clean": "rimraf dist/",
@@ -72,6 +74,11 @@
     "setupFiles": [
       "raf/polyfill",
       "./test/unit/jest-setup.js"
+    ],
+    "collectCoverageFrom": [
+      "src/**.js",
+      "!src/index.js",
+      "!src/type.js"
     ],
     "snapshotSerializers": [
       "enzyme-to-json/serializer"

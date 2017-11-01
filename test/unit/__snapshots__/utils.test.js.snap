@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`utils.js capitalize should be able to capitalize words 1`] = `"Abc"`;
+
+exports[`utils.js capitalize should be able to capitalize words 2`] = `"Abc"`;
+
+exports[`utils.js capitalize should be able to capitalize words 3`] = `"Abc"`;
+
+exports[`utils.js getApiUrl should return correct API endpoint 1`] = `"https://itunes.apple.com/search?media=music&term=bsb"`;
+
+exports[`utils.js getApiUrl should return correct API endpoint without media type 1`] = `"https://itunes.apple.com/search?media=all&term=bsb"`;
+
+exports[`utils.js getKind should return correct format for UI 1`] = `"Movie"`;
+
+exports[`utils.js getKind should return correct format for UI 2`] = `"TV"`;
+
+exports[`utils.js getKind should return correct format for UI 3`] = `"Song"`;
+
+exports[`utils.js getMedia should return proper term for API usage 1`] = `"tvShow"`;

@@ -3,5 +3,28 @@
 exports[`<List /> List component should renders correctly 1`] = `
 <div
   className="list-wrapper"
+>
+  <Item
+    artworkUrl100=""
+    description=""
+    key="1"
+    trackId="1"
+    trackName=""
+    trackPrice={0.99}
+  />
+  <Item
+    artworkUrl100=""
+    description=""
+    key="2"
+    trackId="2"
+    trackName=""
+    trackPrice={1.99}
+  />
+</div>
+`;
+
+exports[`<List /> no results 1`] = `
+<div
+  className="list-wrapper"
 />
 `;

@@ -11,9 +11,9 @@ export const kindColorMap: Object = {
   software: 'indigo'
 };
 
-const capitalize = (str: string): string => (`${str[0].toUpperCase()}${str.slice(1).toLowerCase()}`);
+export const capitalize = (str: string): string => (`${str[0].toUpperCase()}${str.slice(1).toLowerCase()}`);
 
-function getMedia(str: string): string {
+export function getMedia(str: string): string {
   if (str.indexOf(' ') === -1) {
     return str.toLowerCase();
   }
@@ -41,5 +41,5 @@ export function getKind(str: string): string {
     return capitalize(str);
   }
   const sg = str.split('-');
-  return `${getKind(sg[0])} ${capitalize(sg[1])}`;
+  return `${getKind(sg[0])} ${capitalize(sg[1])}`.trim();
 }

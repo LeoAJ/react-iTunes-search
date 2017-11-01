@@ -2,5 +2,8 @@
   "extends" : "../.eslintrc",
   "env"     : {
     "jest"   : true
+  },
+  "rules": {
+    "max-len": 0
   }
 }

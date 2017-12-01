@@ -1,9 +1,11 @@
 # react-iTunes-search
 
-[![David](https://img.shields.io/david/LeoAJ/react-iTunes-search.svg?style=flat-square)](https://david-dm.org/LeoAJ/react-iTunes-search)
-[![David](https://img.shields.io/david/dev/LeoAJ/react-iTunes-search.svg?style=flat-square)](https://david-dm.org/LeoAJ/react-iTunes-search#info=devDependencies)
 [![Travis](https://img.shields.io/travis/LeoAJ/react-iTunes-search.svg?style=flat-square)](https://travis-ci.org/LeoAJ/react-iTunes-search)
 [![npm](https://img.shields.io/npm/l/express.svg?style=flat-square)](https://github.com/LeoAJ/react-iTunes-search/blob/master/LICENSE)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-orange.svg?style=flat-square)](http://makeapullrequest.com)
+[![node](https://img.shields.io/badge/node-%3E=_8.0-yellowgreen.svg?style=flat-square)](https://nodejs.org)
+[![David](https://img.shields.io/david/LeoAJ/react-iTunes-search.svg?style=flat-square)](https://david-dm.org/LeoAJ/react-iTunes-search)
+[![David](https://img.shields.io/david/dev/LeoAJ/react-iTunes-search.svg?style=flat-square)](https://david-dm.org/LeoAJ/react-iTunes-search#info=devDependencies)
 
 :musical_note: :mag: Simple web app for iTunes search with React  (v16)
 

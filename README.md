@@ -1,3 +1,7 @@
+<h1 align=center>
+<img src="logo/1024 Logotype.svg" width=70%>
+</h1>
+
 # react-iTunes-search
 
 [![Travis](https://img.shields.io/travis/LeoAJ/react-iTunes-search.svg?style=flat-square)](https://travis-ci.org/LeoAJ/react-iTunes-search)
